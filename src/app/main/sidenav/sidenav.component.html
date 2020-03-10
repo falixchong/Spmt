@@ -1,7 +1,9 @@
 <div class="nav-container" [class.nav-is-mobile]="mobileQuery.matches">
     <mat-toolbar color="primary" class="nav-toolbar">
       <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-      <h1 class="nav-app-name">Responsive App</h1>
+      <h1 class="nav-app-name">Spointment</h1>
+      <span class="nav-toolbar-fill-remaining-space"></span>
+      <button mat-raised-button color="primary" (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
     </mat-toolbar>
   
     <mat-sidenav-container class="nav-sidenav-container"

@@ -1,4 +1,7 @@
-<p>login works!</p>
-<button mat-raised-button color="primary" routerLink="./main" routerLinkActive="active">Login</button>
+
+
+<button mat-raised-button color="primary" (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
+<button mat-raised-button color="primary" (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
 <button mat-raised-button color="primary" routerLink="/register" routerLinkActive="active">Register</button>
+<!-- <p >{{message}}</p> -->
 <router-outlet></router-outlet>
