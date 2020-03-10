@@ -9,6 +9,8 @@ import { LoginModule } from './login/login.module';
 import { RegisterModule } from './register/register.module';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 import { MainModule } from './main/main.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,13 @@ import { MainModule } from './main/main.module';
     BrowserModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
+    FlexLayoutModule,
     LoginModule,
     RegisterModule,
     MainModule,
     AppRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
