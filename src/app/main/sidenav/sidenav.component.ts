@@ -18,7 +18,7 @@ export class SidenavComponent implements OnDestroy, OnInit {
 
   mobileQuery: MediaQueryList;
 
-  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
+  //fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
   fillerContent = Array.from({length: 50}, () =>
       `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -59,26 +59,6 @@ export class SidenavComponent implements OnDestroy, OnInit {
 
   message: string;
 
-  setMessage() {
-    this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
-  }
-
-  login() {
-    this.message = 'Trying to log in ...';
-
-    this.authService.login().subscribe(() => {
-      this.setMessage();
-      if (this.authService.isLoggedIn) {
-        // Usually you would use the redirect URL from the auth service.
-        // However to keep the example simple, we will always redirect to `/admin`.
-        const redirectUrl = '/main';
-
-        // Redirect the user
-        this.router.navigate([redirectUrl]);
-      }
-    });
-  }
-
   logout() {
     
     let navigationExtras: NavigationExtras = {
@@ -87,7 +67,6 @@ export class SidenavComponent implements OnDestroy, OnInit {
     };
 
     this.authService.logout();
-    this.setMessage();
-    setTimeout(()=>this.router.navigate(['/login'], navigationExtras), 500);
+    setTimeout(()=>this.router.navigate(['/login'], navigationExtras),500);
   }
 }

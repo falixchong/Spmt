@@ -11,13 +11,7 @@ export class LoginComponent implements OnInit {
 
   message: string;
 
-  constructor(public authService: AuthService, public router: Router) {
-    this.setMessage();
-  }
-
-  setMessage() {
-    this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
-  }
+  constructor(public authService: AuthService, public router: Router) {}
 
   ngOnInit(): void {
   }
@@ -26,7 +20,6 @@ export class LoginComponent implements OnInit {
     this.message = 'Trying to log in ...';
 
     this.authService.login().subscribe(() => {
-      this.setMessage();
       if (this.authService.isLoggedIn) {
         // Usually you would use the redirect URL from the auth service.
         // However to keep the example simple, we will always redirect to `/admin`.
@@ -52,6 +45,5 @@ export class LoginComponent implements OnInit {
 
   logout() {
     this.authService.logout();
-    this.setMessage();
   }
 }
