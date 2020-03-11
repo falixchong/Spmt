@@ -99,16 +99,16 @@ body{
 .login-wrapper .mat-stroked-button{
   border:1px solid currentColor;
   line-height:54px;
-  background:#FFF7FA;
+  /* background:#FFF7FA; */
+  background:#FFFFFF;
 }
 
 .login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix{
   padding:0.8375em 0;
 }
 
-.login-wrapper-button button{
-  background-color: #1976d2;
-  color: #ffffff;
+.login-wrapper-button button {
+  color: #004ba0;
   margin-bottom: 8px;
 }
 
@@ -121,7 +121,12 @@ body{
   left: 0;
   right: 0;
 }
-  
+
+.nav-container .mat-nav-list .active-list-item {
+  background-color: #1976d2 !important; /* Note: You could also use a custom theme */
+  color: #ffffff;
+}
+
 .nav-is-mobile .nav-toolbar {
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
