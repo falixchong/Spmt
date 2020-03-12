@@ -17,9 +17,12 @@
                    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <!-- [opened]="!mobileQuery.matches" -->
         <mat-nav-list>
-          <a mat-list-item routerLink="./join-game" routerLinkActive="active-list-item" [routerLinkActiveOptions]="{exact: true}">Join Game</a>
+          <!-- <a mat-list-item routerLink="./join-game" routerLinkActive="active-list-item" [routerLinkActiveOptions]="{exact: true}">Join Game</a>
           <a mat-list-item routerLink="./host-game" routerLinkActive="active-list-item" [routerLinkActiveOptions]="{exact: true}">Host Game</a>
-          <a mat-list-item routerLink="/" routerLinkActive="active-list-item" [routerLinkActiveOptions]="{exact: true}" href="/" (click)="logout()">Log Out</a>
+          <a mat-list-item routerLink="/" routerLinkActive="active-list-item" [routerLinkActiveOptions]="{exact: true}" href="/" (click)="logout()">Log Out</a> -->
+          <a mat-list-item routerLink="./join-game">Join Game</a>
+          <a mat-list-item routerLink="./host-game">Host Game</a>
+          <a mat-list-item (click)="logout()">Log Out</a>
         </mat-nav-list>
       </mat-sidenav>
   
