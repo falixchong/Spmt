@@ -7,15 +7,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 
-import { HostGameComponent } from './host-game.component';
+import { HostSportComponent } from './host-sport.component';
 
-describe('HostGameComponent', () => {
-  let component: HostGameComponent;
-  let fixture: ComponentFixture<HostGameComponent>;
+describe('HostSportComponent', () => {
+  let component: HostSportComponent;
+  let fixture: ComponentFixture<HostSportComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HostGameComponent ],
+      declarations: [ HostSportComponent ],
       imports: [
         NoopAnimationsModule,
         ReactiveFormsModule,
@@ -29,7 +29,7 @@ describe('HostGameComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HostGameComponent);
+    fixture = TestBed.createComponent(HostSportComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

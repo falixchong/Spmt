@@ -7,15 +7,15 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 
-import { JoinGameComponent } from './join-game.component';
+import { JoinSportComponent } from './join-sport.component';
 
-describe('JoinGameComponent', () => {
-  let component: JoinGameComponent;
-  let fixture: ComponentFixture<JoinGameComponent>;
+describe('JoinSportComponent', () => {
+  let component: JoinSportComponent;
+  let fixture: ComponentFixture<JoinSportComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [JoinGameComponent],
+      declarations: [JoinSportComponent],
       imports: [
         NoopAnimationsModule,
         LayoutModule,
@@ -29,7 +29,7 @@ describe('JoinGameComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(JoinGameComponent);
+    fixture = TestBed.createComponent(JoinSportComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

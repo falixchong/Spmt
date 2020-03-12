@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, NavigationExtras } from '@angular/router';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { AuthGuard } from '../auth/auth.guard';
-import { JoinGameComponent } from './join-game/join-game.component';
-import { HostGameComponent } from './host-game/host-game.component';
+import { JoinSportComponent } from './join-sport/join-sport.component';
+import { HostSportComponent } from './host-sport/host-sport.component';
 
 let navigationExtras: NavigationExtras = {
   queryParamsHandling: 'preserve',
@@ -25,20 +25,20 @@ const routes: Routes = [
         path: '',
         canActivateChild: [AuthGuard],
         children: [
-          { path: '', component: JoinGameComponent },
-          { path: 'join-game', component: JoinGameComponent },
-          { path: 'host-game', component: HostGameComponent },
+          { path: '', component: JoinSportComponent },
+          { path: 'join-sport', component: JoinSportComponent },
+          { path: 'host-sport', component: HostSportComponent },
         ]
       }
     ]
   },
   // {
-  //   path: 'join-game', 
+  //   path: 'join-sport', 
   //   component: SidenavComponent,
   //   canActivate: [AuthGuard],
   // },
   // {
-  //   path: 'host-game', 
+  //   path: 'host-sport', 
   //   component: SidenavComponent,
   //   canActivate: [AuthGuard],
   // }

@@ -19,7 +19,7 @@ export class SidenavComponent implements OnDestroy, OnInit {
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) { 
     console.log(event.key);
-    if (event.key == 'Escape') this.sidenav.close();
+    if (event.key == 'Escape') this.sidenav.toggle();
   }
 
   sessionId: Observable<string>;
