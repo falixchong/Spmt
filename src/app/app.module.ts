@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './common/page-not-found/page-not-found.co
 import { MainModule } from './main/main.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     AngularMaterialModule,
     FlexLayoutModule,
+    HttpClientModule,
     LoginModule,
     RegisterModule,
     MainModule,

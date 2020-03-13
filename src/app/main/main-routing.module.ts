@@ -4,6 +4,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { JoinSportComponent } from './join-sport/join-sport.component';
 import { HostSportComponent } from './host-sport/host-sport.component';
+import { SportGameComponent } from './sport-game/sport-game.component';
 
 let navigationExtras: NavigationExtras = {
   queryParamsHandling: 'preserve',
@@ -28,6 +29,8 @@ const routes: Routes = [
           { path: '', component: JoinSportComponent },
           { path: 'join-sport', component: JoinSportComponent },
           { path: 'host-sport', component: HostSportComponent },
+          { path: 'sport-game', component: SportGameComponent },
+          { path: 'sport-game/:id', component: SportGameComponent },
         ]
       }
     ]

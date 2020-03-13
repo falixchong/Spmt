@@ -15,10 +15,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SportGameComponent } from './sport-game/sport-game.component';
 
 
 @NgModule({
-  declarations: [SidenavComponent, JoinSportComponent, HostSportComponent],
+  declarations: [SidenavComponent, JoinSportComponent, HostSportComponent, SportGameComponent],
   imports: [
     CommonModule,
     AngularMaterialModule,
