@@ -58,7 +58,7 @@ export class HostSportComponent {
 
   		this.http.post('/api/v1/sport_game', data).subscribe((data:any) => {
 	      
-	      let path = 'main/sport-game/' + data.sportGame.uid;
+	      let path = 'main/sport-game/' + data.sportGame.gid;
         //let path = 'main/sport-game';
         
         console.log('SERVER POST RESPONSE');
