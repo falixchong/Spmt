@@ -204,3 +204,7 @@ flex: 1 1 auto;
 mat-sidenav-content{
   background-color: #F5F5F5;
 }
+
+.host-sport-card .host-sport-info .host-sport-items{
+  height: 60px;
+}
