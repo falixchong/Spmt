@@ -1,16 +1,15 @@
 <div class="nav-container" [class.nav-is-mobile]="mobileQuery.matches">
-    <mat-toolbar class="nav-toolbar">
-      <button mat-icon-button aria-label="Toggle sidenav" (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-      <h1 class="nav-app-name">Spointment</h1>
-      <span class="nav-toolbar-fill-remaining-space"></span>
-      <div class="nav-toolbar-button-group">
-        <button class="user-profile-button" mat-mini-fab aria-label ="User Profile">
-          <mat-icon>favorite</mat-icon>
-        </button>
-        <button class="logout-button" mat-raised-button (click)="logout()">Log Out</button>
-      </div>
-    </mat-toolbar>
-  
+  <mat-toolbar class="nav-toolbar mat-elevation-z8">
+    <button mat-icon-button aria-label="Toggle sidenav" (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="nav-app-name">Spointment</h1>
+    <span class="nav-toolbar-fill-remaining-space"></span>
+    <div class="nav-toolbar-button-group">
+      <button class="user-profile-button" mat-mini-fab aria-label ="User Profile">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button class="logout-button" mat-raised-button (click)="logout()">Log Out</button>
+    </div>
+  </mat-toolbar>
     <mat-sidenav-container class="nav-sidenav-container"
                            [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
       <mat-sidenav #snav [opened]="!mobileQuery.matches" [mode]="mobileQuery.matches ? 'over' : 'side'"
