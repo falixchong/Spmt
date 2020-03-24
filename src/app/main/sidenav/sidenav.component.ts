@@ -14,7 +14,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class SidenavComponent implements OnDestroy, OnInit {
 
-  @ViewChild('snav') sidenav: MatSidenav;
+  @ViewChild('snav') sidenav: any;
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) { 
@@ -67,5 +67,11 @@ export class SidenavComponent implements OnDestroy, OnInit {
 
     this.authService.logout();
     setTimeout(()=>this.router.navigate(['/login'], navigationExtras),500);
+  }
+
+  closeSideNav() {
+    if (this.sidenav._mode=='over') {
+      this.sidenav.close();
+    }
   }
 }

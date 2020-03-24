@@ -19,8 +19,8 @@
           <!-- <a mat-list-item routerLink="./join-sport" routerLinkActive="active-list-item" [routerLinkActiveOptions]="{exact: true}">Join Sport</a>
           <a mat-list-item routerLink="./host-sport" routerLinkActive="active-list-item" [routerLinkActiveOptions]="{exact: true}">Host Sport</a>
           <a mat-list-item routerLink="/" routerLinkActive="active-list-item" [routerLinkActiveOptions]="{exact: true}" href="/" (click)="logout()">Log Out</a> -->
-          <a mat-list-item routerLink="./join-sport">Join Sport</a>
-          <a mat-list-item routerLink="./host-sport">Host Sport</a>
+          <a mat-list-item (click)="closeSideNav()" routerLink="./join-sport">Join Sport</a>
+          <a mat-list-item (click)="closeSideNav()" routerLink="./host-sport">Host Sport</a>
           <a mat-list-item (click)="logout()">Log Out</a>
         </mat-nav-list>
       </mat-sidenav>
