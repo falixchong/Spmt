@@ -15,7 +15,7 @@ describe('HostSportComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HostSportComponent ],
+      declarations: [HostSportComponent],
       imports: [
         NoopAnimationsModule,
         ReactiveFormsModule,
@@ -23,7 +23,7 @@ describe('HostSportComponent', () => {
         MatCardModule,
         MatInputModule,
         MatRadioModule,
-        MatSelectModule,
+        MatSelectModule
       ]
     }).compileComponents();
   }));

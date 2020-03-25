@@ -8,13 +8,11 @@ import { AuthService } from '../../auth/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   message: string;
 
   constructor(public authService: AuthService, public router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   login() {
     this.message = 'Trying to log in ...';
@@ -31,7 +29,7 @@ export class LoginComponent implements OnInit {
         // Set our navigation extras object
         // that contains our global query params and fragment
         let navigationExtras: NavigationExtras = {
-          queryParams: { 'session_id': sessionId },
+          queryParams: { session_id: sessionId },
           fragment: 'anchor'
         };
 

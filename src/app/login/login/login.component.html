@@ -1,32 +1,52 @@
-<body class= "login-body">
-    <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-      <mat-card class="login-box">
-        <mat-card-header>
-          <mat-card-title>Spointment</mat-card-title>
-        </mat-card-header>
-  
-        <form class="login-form">
-          <mat-card-content>
-            <mat-form-field class="login-full-width">
-              <input matInput placeholder="Username">
-            </mat-form-field>
-  
-            <mat-form-field class="login-full-width">
-              <input matInput placeholder="Password">
-            </mat-form-field>
-          </mat-card-content>
-          <!-- <button mat-stroked-button color="accent" class="btn-block" routerLink='/nav'>Log in</button> -->
-          <!-- <button mat-stroked-button color="accent" class="btn-block" routerLink='/register'>Register</button> -->
-        </form>
-        <div class="login-wrapper-button">
-          <button mat-stroked-button class="btn-block" (click)="login()"  *ngIf="!authService.isLoggedIn">Log In</button>
-          <button mat-stroked-button class="btn-block" (click)="logout()" *ngIf="authService.isLoggedIn">Log Out</button>  
-          <button mat-stroked-button class="btn-block" routerLink="/register" routerLinkActive="active">Register</button>
-        </div>
-      </mat-card>
-  
-    </div>
-  </body>
+<body class="login-container">
+  <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="login-box">
+      <mat-card-header>
+        <mat-card-title>Spointment</mat-card-title>
+      </mat-card-header>
+
+      <form class="login-form">
+        <mat-card-content>
+          <mat-form-field class="login-full-width">
+            <input matInput placeholder="Username" />
+          </mat-form-field>
+
+          <mat-form-field class="login-full-width">
+            <input matInput placeholder="Password" />
+          </mat-form-field>
+        </mat-card-content>
+        <!-- <button mat-stroked-button color="accent" class="btn-block" routerLink='/nav'>Log in</button> -->
+        <!-- <button mat-stroked-button color="accent" class="btn-block" routerLink='/register'>Register</button> -->
+      </form>
+      <div class="login-wrapper-button">
+        <button
+          mat-stroked-button
+          class="btn-block"
+          (click)="login()"
+          *ngIf="!authService.isLoggedIn"
+        >
+          Log In
+        </button>
+        <button
+          mat-stroked-button
+          class="btn-block"
+          (click)="logout()"
+          *ngIf="authService.isLoggedIn"
+        >
+          Log Out
+        </button>
+        <button
+          mat-stroked-button
+          class="btn-block"
+          routerLink="/register"
+          routerLinkActive="active"
+        >
+          Register
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</body>
 
 <!-- <button mat-raised-button color="primary" (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
 <button mat-raised-button color="primary" (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>

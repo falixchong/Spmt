@@ -23,7 +23,7 @@ describe('JoinSportComponent', () => {
         MatCardModule,
         MatGridListModule,
         MatIconModule,
-        MatMenuModule,
+        MatMenuModule
       ]
     }).compileComponents();
   }));

@@ -5,15 +5,17 @@ import { AuthGuard } from './auth/auth.guard';
 import { MainModule } from './main/main.module';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch:'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(
-    routes, 
-    //{ enableTracing: true } // <-- debugging purposes only
-  )],
+  imports: [
+    RouterModule.forRoot(
+      routes
+      //{ enableTracing: true } // <-- debugging purposes only
+    )
+  ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

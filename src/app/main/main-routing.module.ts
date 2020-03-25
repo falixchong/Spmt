@@ -13,12 +13,12 @@ let navigationExtras: NavigationExtras = {
 
 const routes: Routes = [
   // {
-  //   path: 'main', 
+  //   path: 'main',
   //   redirectTo: '/spoint',
   //   pathMatch: 'full'
   // },
   {
-    path: 'main', 
+    path: 'main',
     component: SidenavComponent,
     canActivate: [AuthGuard],
     children: [
@@ -30,18 +30,18 @@ const routes: Routes = [
           { path: 'join-sport', component: JoinSportComponent },
           { path: 'host-sport', component: HostSportComponent },
           { path: 'sport-game', component: SportGameComponent },
-          { path: 'sport-game/:id', component: SportGameComponent },
+          { path: 'sport-game/:id', component: SportGameComponent }
         ]
       }
     ]
-  },
+  }
   // {
-  //   path: 'join-sport', 
+  //   path: 'join-sport',
   //   component: SidenavComponent,
   //   canActivate: [AuthGuard],
   // },
   // {
-  //   path: 'host-sport', 
+  //   path: 'host-sport',
   //   component: SidenavComponent,
   //   canActivate: [AuthGuard],
   // }
@@ -51,4 +51,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MainRoutingModule { }
+export class MainRoutingModule {}

@@ -5,11 +5,10 @@ import { SidenavComponent } from '../main/sidenav/sidenav.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { LoginModule } from './login.module';
 
-
 const routes: Routes = [
-  { 
-    path: 'login', 
-    component: LoginComponent,
+  {
+    path: 'login',
+    component: LoginComponent
     // children: [
     //   {
     //     path: '',
@@ -27,4 +26,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class LoginRoutingModule { }
+export class LoginRoutingModule {}

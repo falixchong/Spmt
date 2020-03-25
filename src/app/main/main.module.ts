@@ -17,9 +17,13 @@ import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SportGameComponent } from './sport-game/sport-game.component';
 
-
 @NgModule({
-  declarations: [SidenavComponent, JoinSportComponent, HostSportComponent, SportGameComponent],
+  declarations: [
+    SidenavComponent,
+    JoinSportComponent,
+    HostSportComponent,
+    SportGameComponent
+  ],
   imports: [
     CommonModule,
     AngularMaterialModule,
@@ -36,4 +40,4 @@ import { SportGameComponent } from './sport-game/sport-game.component';
     ReactiveFormsModule
   ]
 })
-export class MainModule { }
+export class MainModule {}

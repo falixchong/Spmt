@@ -1,78 +1,114 @@
-<form [formGroup]="hostSportForm" novalidate (ngSubmit)="onSubmit()">
-  <mat-card class="host-sport-card">
-    <mat-card-header>
-      <mat-card-title>Host Sport</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Group name" formControlName="groupName">
-            <mat-error *ngIf="hostSportForm.controls['groupName'].hasError('required')">
-              Group Name is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
+<div class="host-sport-container">
+  <form [formGroup]="hostSportForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="host-sport-card">
+      <mat-card-header>
+        <mat-card-title>Host Sport</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="host-sport-row">
+          <div class="host-sport-col">
+            <mat-form-field class="host-sport-input">
+              <input
+                matInput
+                placeholder="Group name"
+                formControlName="groupName"
+              />
+              <mat-error
+                *ngIf="hostSportForm.controls['groupName'].hasError('required')"
+              >
+                Group Name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Group description" formControlName="groupDesc">
-            <mat-error *ngIf="hostSportForm.controls['groupDesc'].hasError('required')">
-              First name is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
+        <div class="host-sport-row">
+          <div class="host-sport-col">
+            <mat-form-field class="host-sport-input">
+              <input
+                matInput
+                placeholder="Group description"
+                formControlName="groupDesc"
+              />
+              <mat-error
+                *ngIf="hostSportForm.controls['groupDesc'].hasError('required')"
+              >
+                First name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <textarea matInput placeholder="Location" formControlName="location"></textarea>
-            <mat-error *ngIf="hostSportForm.controls['location'].hasError('required')">
-              Address is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
+        <div class="host-sport-row">
+          <div class="host-sport-col">
+            <mat-form-field class="host-sport-input">
+              <textarea
+                matInput
+                placeholder="Location"
+                formControlName="location"
+              ></textarea>
+              <mat-error
+                *ngIf="hostSportForm.controls['location'].hasError('required')"
+              >
+                Address is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <label>Group Preference</label>
-          <mat-radio-group formControlName="groupType">
-            <mat-radio-button value="public">Public group</mat-radio-button>
-            <mat-radio-button value="private">Private group</mat-radio-button>
-            <mat-radio-button value="hidden">Hidden group</mat-radio-button>
-          </mat-radio-group>
+        <div class="host-sport-row">
+          <div class="host-sport-col">
+            <label>Group Preference</label>
+            <mat-radio-group
+              class="host-sport-radio-button"
+              formControlName="groupType"
+            >
+              <mat-radio-button value="public">Public group</mat-radio-button>
+              <mat-radio-button value="private">Private group</mat-radio-button>
+              <mat-radio-button value="hidden">Hidden group</mat-radio-button>
+            </mat-radio-group>
+          </div>
         </div>
-      </div>
-      <div class="row-spacing"></div>
-      <div class="row">
-        <div class="col">
-          <label>Join Preference</label>
-          <mat-radio-group formControlName="groupJoinType">
-            <mat-radio-button value="anyone">Anyone can join</mat-radio-button>
-            <mat-radio-button value="request">Request to join</mat-radio-button>
-          </mat-radio-group>
+        <div class="row-spacing"></div>
+        <div class="host-sport-row">
+          <div class="host-sport-col">
+            <label>Join Preference</label>
+            <mat-radio-group
+              class="host-sport-radio-button"
+              formControlName="groupJoinType"
+            >
+              <mat-radio-button value="anyone"
+                >Anyone can join</mat-radio-button
+              >
+              <mat-radio-button value="request"
+                >Request to join</mat-radio-button
+              >
+            </mat-radio-group>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <mat-select placeholder="Type of Sports" formControlName="sportType">
-              <mat-option *ngFor="let sportType of sportTypes" [value]="sportType.value">
-                {{ sportType.name }}
-              </mat-option>
-            </mat-select>
-            <mat-error *ngIf="hostSportForm.controls['sportType'].hasError('required')">
-              State is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
+        <div class="host-sport-row">
+          <div class="host-sport-col">
+            <mat-form-field class="full-width">
+              <mat-select
+                placeholder="Type of Sports"
+                formControlName="sportType"
+              >
+                <mat-option
+                  *ngFor="let sportType of sportTypes"
+                  [value]="sportType.value"
+                >
+                  {{ sportType.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error
+                *ngIf="hostSportForm.controls['sportType'].hasError('required')"
+              >
+                State is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
         </div>
-      </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Submit</button>
-    </mat-card-actions>
-  </mat-card>
-</form>
-
-
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
