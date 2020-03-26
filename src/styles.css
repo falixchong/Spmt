@@ -265,6 +265,34 @@ flex: 1 1 auto;
 
 }
 
-.sport-card-container .host-sport-card .host-sport-info .host-sport-items{
-  height: 60px;
+.sport-card-container .sport-card{
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.sport-card-container, .sport-card{
+  height:100%;
+}
+
+.sport-card-img{
+  background-image:url("./assets/images/img_badminton_flip.jpg");
+  /* object-fit: cover; */
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.sport-card-container .sport-card .sport-card-content{
+  margin-left: 10px;
+}
+
+.sport-card-container .sport-card .sport-card-action .sport-card-button{
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  background-color: #1976d2;
+  color:  #ffffff;
 }

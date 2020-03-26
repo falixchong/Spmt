@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SportGameModel } from 'src/app/models/SportGameModel';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-sport-game',
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./sport-game.component.css']
 })
 export class SportGameComponent implements OnInit {
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {}
 
   private subscriber: any;
 
@@ -39,4 +39,9 @@ export class SportGameComponent implements OnInit {
       console.log(params.id);
     });
   }
+
+  goBack() {
+    console.log(this.route.parent);
+    this.router.navigate(["../join-sport"], { relativeTo: this.route });
+ }
 }

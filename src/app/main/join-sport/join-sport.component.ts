@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-join-sport',
@@ -29,5 +30,10 @@ export class JoinSportComponent {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  goJoin() {
+    console.log(this.route.parent);
+    this.router.navigate(["./sport-game/gid0"], { relativeTo: this.route });
+ }
+
+  constructor(private breakpointObserver: BreakpointObserver, private route: ActivatedRoute, private router: Router) {}
 }

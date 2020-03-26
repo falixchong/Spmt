@@ -1,48 +1,27 @@
 <div class="sport-card-container">
-  <mat-card class="host-sport-card">
-    <mat-card-header>
-      <mat-card-title>Host Sport</mat-card-title>
+  <mat-card class="sport-card">
+    <div class="sport-card-img"></div>
+    <!-- <div mat-card-image class="sport-card-img"></div> -->
+    <mat-card-header class="sport-card-header">
+      <div mat-card-md-image></div>
+      <mat-card-title>{{ sportGame.groupName }}</mat-card-title>
+      <mat-card-subtitle>{{ sportGame.sportType }}</mat-card-subtitle>
+      <mat-card-subtitle>
+        {{ sportGame.groupDesc }}
+      </mat-card-subtitle>
     </mat-card-header>
-    <div class="host-sport-info">
-      <div class="host-sport-items">
-        <mat-label>GID</mat-label>
-        <div>{{ sportGame.gid }}</div>
-      </div>
 
-      <div class="host-sport-items">
-        <mat-label>GUID</mat-label>
-        <div>{{ sportGame.guid }}</div>
-      </div>
+    <mat-card-content class="sport-card-content">
+      <mat-chip-list>
+        <mat-chip>{{ sportGame.groupJoinType }}</mat-chip>
+        <mat-chip>{{ sportGame.groupType }}</mat-chip>
+        <mat-chip>{{ sportGame.location }}</mat-chip>
+      </mat-chip-list>
+    </mat-card-content>
 
-      <div class="host-sport-items">
-        <mat-label>Group Name</mat-label>
-        <div>{{ sportGame.groupName }}</div>
-      </div>
-
-      <div class="host-sport-items">
-        <mat-label>Group Description</mat-label>
-        <div>{{ sportGame.groupDesc }}</div>
-      </div>
-
-      <div class="host-sport-items">
-        <mat-label>Location</mat-label>
-        <div>{{ sportGame.location }}</div>
-      </div>
-
-      <div class="host-sport-items">
-        <mat-label>Group Preference</mat-label>
-        <div>{{ sportGame.groupType }}</div>
-      </div>
-
-      <div class="host-sport-items">
-        <mat-label>Group Join Preference</mat-label>
-        <div>{{ sportGame.groupJoinType }}</div>
-      </div>
-
-      <div class="host-sport-items">
-        <mat-label>Type of Sports</mat-label>
-        <div>{{ sportGame.sportType }}</div>
-      </div>
-    </div>
+    <mat-card-actions class="sport-card-action">
+        <!-- <button mat-raised-button class="sport-card-button" (click)="goBack()">Back</button> -->
+        <button mat-raised-button class="sport-card-button">Join</button>
+    </mat-card-actions>
   </mat-card>
 </div>
