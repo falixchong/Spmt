@@ -3,9 +3,12 @@
     <div class="sport-card-img"></div>
     <!-- <div mat-card-image class="sport-card-img"></div> -->
     <mat-card-header class="sport-card-header">
-      <div mat-card-md-image></div>
-      <mat-card-title>{{ sportGame.groupName }}</mat-card-title>
-      <mat-card-subtitle>{{ sportGame.sportType }}</mat-card-subtitle>
+      <mat-card-title>
+        {{ sportGame.groupName }}
+        <mat-chip color="primary" selected>{{ sportGame.sportType }}</mat-chip>
+      </mat-card-title>
+
+      <!-- <mat-card-subtitle>{{ sportGame.sportType }}</mat-card-subtitle> -->
       <mat-card-subtitle>
         {{ sportGame.groupDesc }}
       </mat-card-subtitle>
@@ -20,8 +23,10 @@
     </mat-card-content>
 
     <mat-card-actions class="sport-card-action">
-        <!-- <button mat-raised-button class="sport-card-button" (click)="goBack()">Back</button> -->
+      <div fxLayout="row" fxLayoutAlign="end stretch" >
+        <button mat-raised-button class="sport-card-button" routerLink="../../join-sport">Back</button>
         <button mat-raised-button class="sport-card-button">Join</button>
+      </div>
     </mat-card-actions>
   </mat-card>
 </div>

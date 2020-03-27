@@ -17,20 +17,21 @@ const routes: Routes = [
   //   redirectTo: '/spoint',
   //   pathMatch: 'full'
   // },
+  {path: '', redirectTo: 'main', pathMatch: 'full'},
   {
     path: 'main',
     component: SidenavComponent,
     canActivate: [AuthGuard],
     children: [
       {
-        path: '',
+        path: '', 
         canActivateChild: [AuthGuard],
         children: [
-          { path: '', component: JoinSportComponent },
-          { path: 'join-sport', component: JoinSportComponent },
-          { path: 'host-sport', component: HostSportComponent },
+          { path: '', redirectTo: 'join-sport', pathMatch: 'full'},
+          { path: 'join-sport', component: JoinSportComponent},
           { path: 'sport-game', component: SportGameComponent },
-          { path: 'sport-game/:id', component: SportGameComponent }
+          { path: 'sport-game/:id', component: SportGameComponent },
+          { path: 'host-sport', component: HostSportComponent },
         ]
       }
     ]

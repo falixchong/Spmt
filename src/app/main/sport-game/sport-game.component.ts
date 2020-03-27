@@ -39,9 +39,4 @@ export class SportGameComponent implements OnInit {
       console.log(params.id);
     });
   }
-
-  goBack() {
-    console.log(this.route.parent);
-    this.router.navigate(["../join-sport"], { relativeTo: this.route });
- }
 }

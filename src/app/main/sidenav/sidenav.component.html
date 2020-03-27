@@ -7,13 +7,13 @@
     <span class="nav-toolbar-fill-remaining-space"></span>
     <div class="nav-toolbar-button-group">
       <button
-        class="user-profile-button"
+        class="nav-toolbar-profile-button"
         mat-mini-fab
         aria-label="User Profile"
       >
         <mat-icon>favorite</mat-icon>
       </button>
-      <button class="logout-button" mat-raised-button (click)="logout()">
+      <button class="nav-toolbar-logout-button" mat-raised-button (click)="logout()">
         Log Out
       </button>
     </div>
@@ -44,7 +44,7 @@
       </mat-nav-list>
     </mat-sidenav>
 
-    <mat-sidenav-content>
+    <mat-sidenav-content class="nav-content">
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

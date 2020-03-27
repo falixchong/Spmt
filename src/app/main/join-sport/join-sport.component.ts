@@ -29,11 +29,6 @@ export class JoinSportComponent {
       ];
     })
   );
-
-  goJoin() {
-    console.log(this.route.parent);
-    this.router.navigate(["./sport-game/gid0"], { relativeTo: this.route });
- }
-
+  
   constructor(private breakpointObserver: BreakpointObserver, private route: ActivatedRoute, private router: Router) {}
 }

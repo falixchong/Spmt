@@ -26,9 +26,10 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <div class="join-sport-card"></div>
-          <!-- <button mat-raised-button class="join-sport-card-button" routerLink="./sport-game/gid0">Join</button> -->
-          <button mat-raised-button class="join-sport-card-button" (click)="goJoin()">Join</button>
+          <div class="join-sport-card-image"></div>
+          <div fxLayout="row" fxLayoutAlign="end end" >
+            <button mat-raised-button class="join-sport-card-button" routerLink="../sport-game/gid0">Join</button>
+          </div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

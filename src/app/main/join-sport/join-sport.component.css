@@ -1,0 +1,37 @@
+.join-sport-container {
+    margin: 20px;
+  }
+  
+.join-sport-dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.join-sport-card-more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.join-sport-card-avatar {
+  background-image: url('src/assets/images/doge_cropped.jpg');
+  background-size: cover;
+}
+
+.join-sport-card-image{
+  background-image:url("src/assets/images/img_badminton_cropped_flip.jpg");
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+}
+
+.join-sport-card-button{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #1976d2;
+  color:  #ffffff;
+
+}

@@ -57,12 +57,12 @@
           <div class="host-sport-col">
             <label>Group Preference</label>
             <mat-radio-group
-              class="host-sport-radio-button"
+              class="host-sport-radio-button-group"
               formControlName="groupType"
             >
-              <mat-radio-button value="public">Public group</mat-radio-button>
-              <mat-radio-button value="private">Private group</mat-radio-button>
-              <mat-radio-button value="hidden">Hidden group</mat-radio-button>
+              <mat-radio-button class="host-sport-radio-button" value="public">Public group</mat-radio-button>
+              <mat-radio-button class="host-sport-radio-button" value="private">Private group</mat-radio-button>
+              <mat-radio-button class="host-sport-radio-button" value="hidden">Hidden group</mat-radio-button>
             </mat-radio-group>
           </div>
         </div>
@@ -71,13 +71,13 @@
           <div class="host-sport-col">
             <label>Join Preference</label>
             <mat-radio-group
-              class="host-sport-radio-button"
+              class="host-sport-radio-button-group"
               formControlName="groupJoinType"
             >
-              <mat-radio-button value="anyone"
+              <mat-radio-button class="host-sport-radio-button" value="anyone"
                 >Anyone can join</mat-radio-button
               >
-              <mat-radio-button value="request"
+              <mat-radio-button class="host-sport-radio-button"value="request"
                 >Request to join</mat-radio-button
               >
             </mat-radio-group>

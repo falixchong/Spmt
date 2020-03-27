@@ -1,0 +1,76 @@
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* .active-list-item {
+  background-color: #1976d2 !important; 
+  color: #ffffff;
+} */
+
+.nav-is-mobile .nav-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+.nav-container .nav-toolbar {
+  background-color: #004ba0;
+  color: #ffffff;
+}
+
+.nav-container .nav-toolbar .mat-toolbar {
+  position: relative;
+  z-index: 8;
+}
+
+.nav-is-mobile .nav-toolbar .mat-toolbar {
+  position: relative;
+  z-index: 8;
+}
+  
+    
+.nav-app-name {
+    margin-left: 8px;
+  }
+  
+.nav-container .nav-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+      causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+  
+.nav-is-mobile .nav-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+      `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+  
+.nav-toolbar-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+  Every toolbar row uses a flexbox row layout. */
+flex: 1 1 auto;
+}
+  
+.nav-toolbar-button-group button{
+  margin-right: 8px;
+}
+  
+.nav-toolbar-logout-button{
+  background-color: #1976d2;
+  color:  #ffffff;
+}
+  
+.nav-toolbar-profile-button{
+  background-color: #1976d2;
+  color:  #ffffff;
+}
+  
+.nav-content{
+  background-color: #F5F5F5;
+}
