@@ -22,20 +22,14 @@
           <mat-form-field class="register-full-width">
             <mat-label>Choose a role...</mat-label>
             <mat-select [(value)]="selected">
-              <mat-option [value]="roles" *ngFor="let roles of Roles"
-                >{{ roles }}
+              <mat-option [value]="roles" *ngFor="let roles of Roles">{{ roles }}
               </mat-option>
             </mat-select>
           </mat-form-field>
         </mat-card-content>
         <p></p>
         <div class="register-wrapper-button">
-          <button
-            mat-stroked-button
-            class="btn-block"
-            routerLink="/login"
-            routerLinkActive="active"
-          >
+          <button mat-stroked-button class="btn-block" routerLink="/login" routerLinkActive="active">
             Back
           </button>
           <button mat-stroked-button class="btn-block">Register</button>

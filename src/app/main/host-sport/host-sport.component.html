@@ -8,14 +8,8 @@
         <div class="host-sport-row">
           <div class="host-sport-col">
             <mat-form-field class="host-sport-input">
-              <input
-                matInput
-                placeholder="Group name"
-                formControlName="groupName"
-              />
-              <mat-error
-                *ngIf="hostSportForm.controls['groupName'].hasError('required')"
-              >
+              <input matInput placeholder="Group name" formControlName="groupName" />
+              <mat-error *ngIf="hostSportForm.controls['groupName'].hasError('required')">
                 Group Name is <strong>required</strong>
               </mat-error>
             </mat-form-field>
@@ -24,14 +18,8 @@
         <div class="host-sport-row">
           <div class="host-sport-col">
             <mat-form-field class="host-sport-input">
-              <input
-                matInput
-                placeholder="Group description"
-                formControlName="groupDesc"
-              />
-              <mat-error
-                *ngIf="hostSportForm.controls['groupDesc'].hasError('required')"
-              >
+              <input matInput placeholder="Group description" formControlName="groupDesc" />
+              <mat-error *ngIf="hostSportForm.controls['groupDesc'].hasError('required')">
                 First name is <strong>required</strong>
               </mat-error>
             </mat-form-field>
@@ -40,14 +28,8 @@
         <div class="host-sport-row">
           <div class="host-sport-col">
             <mat-form-field class="host-sport-input">
-              <textarea
-                matInput
-                placeholder="Location"
-                formControlName="location"
-              ></textarea>
-              <mat-error
-                *ngIf="hostSportForm.controls['location'].hasError('required')"
-              >
+              <textarea matInput placeholder="Location" formControlName="location"></textarea>
+              <mat-error *ngIf="hostSportForm.controls['location'].hasError('required')">
                 Address is <strong>required</strong>
               </mat-error>
             </mat-form-field>
@@ -56,10 +38,7 @@
         <div class="host-sport-row">
           <div class="host-sport-col">
             <label>Group Preference</label>
-            <mat-radio-group
-              class="host-sport-radio-button-group"
-              formControlName="groupType"
-            >
+            <mat-radio-group class="host-sport-radio-button-group" formControlName="groupType">
               <mat-radio-button class="host-sport-radio-button" value="public">Public group</mat-radio-button>
               <mat-radio-button class="host-sport-radio-button" value="private">Private group</mat-radio-button>
               <mat-radio-button class="host-sport-radio-button" value="hidden">Hidden group</mat-radio-button>
@@ -70,36 +49,21 @@
         <div class="host-sport-row">
           <div class="host-sport-col">
             <label>Join Preference</label>
-            <mat-radio-group
-              class="host-sport-radio-button-group"
-              formControlName="groupJoinType"
-            >
-              <mat-radio-button class="host-sport-radio-button" value="anyone"
-                >Anyone can join</mat-radio-button
-              >
-              <mat-radio-button class="host-sport-radio-button"value="request"
-                >Request to join</mat-radio-button
-              >
+            <mat-radio-group class="host-sport-radio-button-group" formControlName="groupJoinType">
+              <mat-radio-button class="host-sport-radio-button" value="anyone">Anyone can join</mat-radio-button>
+              <mat-radio-button class="host-sport-radio-button" value="request">Request to join</mat-radio-button>
             </mat-radio-group>
           </div>
         </div>
         <div class="host-sport-row">
           <div class="host-sport-col">
             <mat-form-field class="full-width">
-              <mat-select
-                placeholder="Type of Sports"
-                formControlName="sportType"
-              >
-                <mat-option
-                  *ngFor="let sportType of sportTypes"
-                  [value]="sportType.value"
-                >
+              <mat-select placeholder="Type of Sports" formControlName="sportType">
+                <mat-option *ngFor="let sportType of sportTypes" [value]="sportType.value">
                   {{ sportType.name }}
                 </mat-option>
               </mat-select>
-              <mat-error
-                *ngIf="hostSportForm.controls['sportType'].hasError('required')"
-              >
+              <mat-error *ngIf="hostSportForm.controls['sportType'].hasError('required')">
                 State is <strong>required</strong>
               </mat-error>
             </mat-form-field>

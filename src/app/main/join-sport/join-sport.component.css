@@ -1,7 +1,7 @@
 .join-sport-container {
-    margin: 20px;
-  }
-  
+  margin: 20px;
+}
+
 .join-sport-dashboard-card {
   position: absolute;
   top: 15px;
@@ -21,17 +21,16 @@
   background-size: cover;
 }
 
-.join-sport-card-image{
-  background-image:url("src/assets/images/img_badminton_cropped_flip.jpg");
+.join-sport-card-image {
+  background-image: url('src/assets/images/img_badminton_cropped_flip.jpg');
   background-size: cover;
   height: 200px;
   width: 100%;
 }
 
-.join-sport-card-button{
+.join-sport-card-button {
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: #1976d2;
-  color:  #ffffff;
-
+  color: #ffffff;
 }

@@ -9,7 +9,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./sport-game.component.css']
 })
 export class SportGameComponent implements OnInit {
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   private subscriber: any;
 

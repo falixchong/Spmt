@@ -19,28 +19,13 @@
         <!-- <button mat-stroked-button color="accent" class="btn-block" routerLink='/register'>Register</button> -->
       </form>
       <div class="login-wrapper-button">
-        <button
-          mat-stroked-button
-          class="btn-block"
-          (click)="login()"
-          *ngIf="!authService.isLoggedIn"
-        >
+        <button mat-stroked-button class="btn-block" (click)="login()" *ngIf="!authService.isLoggedIn">
           Log In
         </button>
-        <button
-          mat-stroked-button
-          class="btn-block"
-          (click)="logout()"
-          *ngIf="authService.isLoggedIn"
-        >
+        <button mat-stroked-button class="btn-block" (click)="logout()" *ngIf="authService.isLoggedIn">
           Log Out
         </button>
-        <button
-          mat-stroked-button
-          class="btn-block"
-          routerLink="/register"
-          routerLinkActive="active"
-        >
+        <button mat-stroked-button class="btn-block" routerLink="/register" routerLinkActive="active">
           Register
         </button>
       </div>

@@ -29,6 +29,10 @@ export class JoinSportComponent {
       ];
     })
   );
-  
-  constructor(private breakpointObserver: BreakpointObserver, private route: ActivatedRoute, private router: Router) {}
+
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 }

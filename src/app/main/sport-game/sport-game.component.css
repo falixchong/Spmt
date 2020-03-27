@@ -1,31 +1,32 @@
-.sport-card-container, .sport-card{
-  height:100%;
+.sport-card-container,
+.sport-card {
+  height: 100%;
 }
 
-.sport-card{
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-  
-.sport-card-img{
-  background-image:url("src/assets/images/img_badminton_flip.jpg");
+.sport-card {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.sport-card-img {
+  background-image: url('src/assets/images/img_badminton_flip.jpg');
   /* object-fit: cover; */
   background-size: cover;
   height: 200px;
   width: 100%;
   margin-bottom: 15px;
 }
-  
-.sport-card-content{
+
+.sport-card-content {
   margin-left: 10px;
 }
-  
-.sport-card-button{
+
+.sport-card-button {
   margin-top: 5px;
   margin-bottom: 0px;
   margin-left: 10px;
   background-color: #1976d2;
-  color:  #ffffff;
+  color: #ffffff;
 }
