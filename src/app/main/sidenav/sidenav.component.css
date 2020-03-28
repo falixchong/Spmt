@@ -14,14 +14,15 @@
 } */
 
 .nav-is-mobile .nav-toolbar {
-  position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  position: fixed;
   z-index: 2;
 }
 
 .nav-container .nav-toolbar {
   background-color: #004ba0;
   color: #ffffff;
+  z-index: 2;
 }
 
 .nav-container .nav-toolbar .mat-toolbar {
@@ -71,5 +72,5 @@
 }
 
 .nav-content {
-  background-color: #f5f5f5;
+  background-color: #e4e4e4;
 }

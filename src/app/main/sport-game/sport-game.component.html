@@ -4,8 +4,11 @@
     <!-- <div mat-card-image class="sport-card-img"></div> -->
     <mat-card-header class="sport-card-header">
       <mat-card-title>
-        {{ sportGame.groupName }}
-        <mat-chip color="primary" selected>{{ sportGame.sportType }}</mat-chip>
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <div class="sport-card-title">{{ sportGame.groupName }}</div>
+          <mat-chip class="sport-card-chip" selected>{{ sportGame.sportType }}</mat-chip>
+        </div>
+
       </mat-card-title>
 
       <!-- <mat-card-subtitle>{{ sportGame.sportType }}</mat-card-subtitle> -->

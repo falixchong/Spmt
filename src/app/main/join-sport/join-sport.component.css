@@ -10,6 +10,15 @@
   bottom: 15px;
 }
 
+.join-sport-chips-list, .join-sport-chip{
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color: #1976d2;
+  color: #ffffff;
+}
+
 .join-sport-card-more-button {
   position: absolute;
   top: 5px;

@@ -10,6 +10,22 @@
   margin-bottom: 15px;
 }
 
+.sport-card-title{
+  margin-left: 0px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.sport-card-chip{
+  margin-left: 5px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  background-color: #1976d2;
+  color: #ffffff;
+}
+
 .sport-card-img {
   background-image: url('src/assets/images/img_badminton_flip.jpg');
   /* object-fit: cover; */

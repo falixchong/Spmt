@@ -68,19 +68,23 @@ export class HostSportComponent {
 
       this.http.post('/api/v1/sport_game', data).subscribe(
         (data: any) => {
-          let path = 'main/sport-game/' + data.sportGame.gid;
-          //let path = 'main/sport-game';
-
+          // let path = 'main/sport-game/' + data.sportGame.gid;
+  
           console.log('SERVER POST RESPONSE');
           console.log(data);
-
-          this.router.navigate([path]);
+  
+          let path = 'main/sport-game/' + data.sportGame.gid;
+          console.log('ROUTE TO SPORT GAME');
+          console.log(path);
+          this.router.navigate([path]);         
         },
         error => {
           this.serviceErrors = error.error.error;
           console.log('SERVER POST ERROR RESPONSE' + this.serviceErrors);
         }
       );
+
+      // this.postToDB(data);
 
       this.submitted = true;
     }
