@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
           fragment: 'anchor'
         };
 
-        console.log('login()');
+        //console.log('login()');
 
         // Redirect the user
         this.router.navigate([redirectUrl], navigationExtras);

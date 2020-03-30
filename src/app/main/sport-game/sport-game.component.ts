@@ -33,14 +33,14 @@ export class SportGameComponent implements OnInit {
         .get('/api/v1/sport_game/' + params.id)
         .subscribe((data: any) => {
           this.sportGame = new SportGameModel(data.sportGame);
-          console.log('DATA');
-          console.log(data);
+          //console.log('DATA');
+          //console.log(data);
         });
 
-      console.log('GET RESPONSE');
-      console.log(this.sportGame);
-      console.log('PARAMS');
-      console.log(params.id);
+      //console.log('GET RESPONSE');
+      //console.log(this.sportGame);
+      //console.log('PARAMS');
+      //console.log(params.id);
     });
   }
 }
