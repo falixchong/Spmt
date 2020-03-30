@@ -24,7 +24,7 @@ export class SidenavComponent implements OnDestroy, OnInit {
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
-    console.log(event.key);
+    //console.log(event.key);
     if (event.key == 'Escape') this.sidenav.toggle();
   }
 
@@ -52,14 +52,14 @@ export class SidenavComponent implements OnDestroy, OnInit {
       map(params => params.get('session_id') || 'None')
     );
 
-    console.log('SessionId');
-    console.log(this.sessionId);
+    //console.log('SessionId');
+    //console.log(this.sessionId);
 
     // Capture the fragment if available
     this.token = this.route.fragment.pipe(map(fragment => fragment || 'None'));
 
-    console.log('Token');
-    console.log(this.token);
+    //console.log('Token');
+    //console.log(this.token);
   }
 
   ngOnDestroy(): void {

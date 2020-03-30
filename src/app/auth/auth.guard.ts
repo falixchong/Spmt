@@ -46,7 +46,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
 
-    console.log('checkLogin called');
+    //console.log('checkLogin called');
 
     // Set our navigation extras object
     // that contains our global query params and fragment
