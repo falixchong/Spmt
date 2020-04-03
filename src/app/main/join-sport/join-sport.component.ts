@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-join-sport',
@@ -33,6 +35,13 @@ export class JoinSportComponent {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private route: ActivatedRoute,
-    private router: Router
-  ) {}
+    private router: Router,
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
+    this.matIconRegistry.addSvgIcon(
+      "badminton",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/images/badminton.svg")
+    );
+  }
 }
