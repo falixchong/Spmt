@@ -10,11 +10,36 @@
   bottom: 15px;
 }
 
-.join-sport-chips-list, .join-sport-chip{
-  margin-left: 0px;
-  margin-right: 0px;
+/* .join-sport-chip-list{
+  margin-left: 5px;
+  margin-right: 5px;
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 5px; 
+}
+
+.join-sport-chip{
+  margin-left: 10px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-color: #1976d2;
+  color: #ffffff;
+} */
+
+.join-sport-card-button-icon{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #1976d2;
+  color: #ffffff;
+}
+
+.join-sport-card-icon{
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 5px;
+  padding-left: 4px;
   background-color: #1976d2;
   color: #ffffff;
 }
@@ -43,3 +68,4 @@
   background-color: #1976d2;
   color: #ffffff;
 }
+

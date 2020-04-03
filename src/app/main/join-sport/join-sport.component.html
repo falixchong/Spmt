@@ -12,17 +12,32 @@
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
+              <button mat-menu-item>Share</button>
+              <button mat-menu-item>Unjoin</button>
+              <button mat-menu-item>Unlike</button>
             </mat-menu>
           </mat-card-title>
+
         </mat-card-header>
         <mat-card-content>
-          <div class="join-sport-card-image"></div>
-          <div fxLayout="row" fxLayoutAlign="space-between center" >
-            <mat-chip-list aria-label="join-sport-chips-list">
+          <div class="join-sport-card-image" fxLayout="row" fxLayoutAlign="end start" >
+            <button class="join-sport-card-button-icon" mat-icon-button aria-label="badminton">
+              <mat-icon class="join-sport-card-icon" svgIcon="badminton">Badminton</mat-icon>
+            </button>
+
+            <!-- <mat-chip-list class="join-sport-chip-list">
               <mat-chip class="join-sport-chip">Badminton</mat-chip>
-            </mat-chip-list>
+            </mat-chip-list> -->
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center" >
+            <div>
+              <button mat-icon-button aria-label="favorite">
+                <mat-icon>favorite</mat-icon>
+              </button>
+              <button mat-icon-button aria-label="share">
+                <mat-icon>share</mat-icon>
+              </button>
+            </div>
             <button mat-raised-button class="join-sport-card-button" routerLink="../sport-game/gid0">Join</button>
           </div>
         </mat-card-content>
