@@ -227,5 +227,6 @@ db.createUser(
 https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-18-04
 
 Configure Jenkins to subdomain/subdirectory
+
 https://wiki.jenkins.io/display/JENKINS/Jenkins+behind+an+NGinX+reverse+proxy
 
