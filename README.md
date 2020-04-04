@@ -1,6 +1,16 @@
 # Spmt
 
-** Angular Front-End **
+## Resuming project after cloning from GitHub
+
+Update dependancies
+
+``` npm update ```
+
+Install package directory
+
+``` npm install ```
+
+##Angular Front-End
 
 Install curl
 
@@ -49,7 +59,7 @@ proxy conf example
 
 
 
-** Angular Material **
+## Angular Material
 
 Install Angular Material
 ``` ng add @angular/material ```
@@ -153,3 +163,69 @@ export class AngularMaterialModule {}
     Use of this source code is governed by an MIT-style license that
     can be found in the LICENSE file at http://angular.io/license */
 ```
+
+
+## Installing NGIX
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04
+
+## Deploying Angular App
+
+Build App
+
+``` ng build --prod ```
+
+Move compile app to /var/www/html
+
+``` cp -r ./dist/* /var/www/html ```
+
+## Implementing SSL
+https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-18-04
+
+Instead of 
+
+``` sudo certbot --apache -d your_domain -d www.your_domain ```
+
+Use below to generate the cert only and later add-on to nginx config
+
+``` certbot certonly --standalone -d spointment.com -d www.spointment.com ```
+
+Use mozilla SSL cert configurator to generate NGINX configuration
+
+https://ssl-config.mozilla.org/
+
+Replace generated nginx config with 
+```
+    ssl_certificate <letencrypt path>/fullchain.pem;
+    ssl_certificate_key <letencrypt path>/privkey.pem;
+    ssl_trusted_certificate <letencrypt path>/chain.pem;
+```
+
+Replace Nginx configuration in ```/etc/nginx/```
+
+
+## Install MongoDB
+https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-18-04
+
+## Setting up mongodb with password
+
+List/Add User
+```
+use admin
+db.getUsers()
+
+db.createUser(
+  {
+    user: "dbadmin",
+    pwd: "&o2Myoqi2vtyH00ALbAohhWMkAVEjg",
+    roles: ["userAdminAnyDatabase", "dbAdminAnyDatabase", "readWriteAnyDatabase"]
+  }
+)
+```
+
+
+## Install Jenkins
+https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-18-04
+
+Configure Jenkins to subdomain/subdirectory
+https://wiki.jenkins.io/display/JENKINS/Jenkins+behind+an+NGinX+reverse+proxy
+
