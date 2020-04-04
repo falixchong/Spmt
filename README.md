@@ -3,24 +3,31 @@
 ** Angular Front-End **
 
 Install curl
+
 ``` apt-get install curl ```
 
 Install npm
+
 ``` apt-get install nodejs ```
 
 Install angular
+
 ``` npm install -g angular-cli ```
 
 Install Angular Material
+
 ``` ng add @angular/material ```
 
 Generating Angular Project
+
 ``` ng new <project-name> ```
 
 Generating Angular Module & Routing
+
 ``` ng generate module <module> --routing ```
 
 Generating Angular Component
+
 ``` ng generate component <module-path>\<component> --module <module-name> ```
 
 Start Angular with/without proxy
