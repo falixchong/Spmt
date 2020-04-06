@@ -1,5 +1,5 @@
 # Spmt
-# Test
+
 ## Resuming project after cloning from GitHub
 
 Update dependancies
