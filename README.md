@@ -177,14 +177,10 @@ https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-
 
 ## Deploying Angular App Manually
 
-<<<<<<< HEAD
 Build App
 
 ``` ng build --prod ```
 
-=======
-Jenkins will manage/deploy into Server with each git commit
->>>>>>> f5fb014cff4d938ad07c732aaf0c6cdb5ba9429e
 
 ## Implementing SSL
 https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-18-04
