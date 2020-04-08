@@ -210,7 +210,7 @@ db.getUsers()
 db.createUser(
   {
     user: "dbadmin",
-    pwd: "&o2Myoqi2vtyH00ALbAohhWMkAVEjg",
+    pwd: "<password>",
     roles: ["userAdminAnyDatabase", "dbAdminAnyDatabase", "readWriteAnyDatabase"]
   }
 )
