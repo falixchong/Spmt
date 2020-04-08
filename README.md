@@ -12,6 +12,8 @@ Install package directory
 npm install
 ```
 
+## Run application locally
+
 Start Angular without proxy
 ```
 ng serve 
@@ -25,7 +27,7 @@ or
 npm start
 ```
 
-## Angular Front-End
+## Angular Front-End Development
 
 Install npm
 ```
@@ -198,14 +200,6 @@ export class AngularMaterialModule {}
 ## Installing NGIX
 https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04
 
-## Deploying Angular App Manually
-
-Build App
-
-```
-ng build --prod
-```
-
 
 ## Implementing SSL
 https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-18-04
@@ -264,3 +258,11 @@ Configure Jenkins to subdomain/subdirectory
 
 https://wiki.jenkins.io/display/JENKINS/Jenkins+behind+an+NGinX+reverse+proxy
 
+
+## Deploying Angular App Manually
+
+Build App
+
+```
+ng build --prod
+```
