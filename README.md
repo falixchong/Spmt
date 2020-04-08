@@ -1,5 +1,5 @@
 # Spmt
-# Test CICD
+
 ## Resuming project after cloning from GitHub
 
 Update dependancies
@@ -40,10 +40,17 @@ Generating Angular Component
 
 ``` ng generate component <module-path>\<component> --module <module-name> ```
 
-Start Angular with/without proxy
+Start Angular without proxy
 ```
-ng server 
+ng serve 
+```
+Start Angular with proxy
+```
 ng serve --proxy-config proxy.conf.json
+```
+or
+```
+npm start
 ```
 proxy conf example
 ```
@@ -168,15 +175,12 @@ export class AngularMaterialModule {}
 ## Installing NGIX
 https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04
 
-## Deploying Angular App
+## Deploying Angular App Manually
 
 Build App
 
 ``` ng build --prod ```
 
-Move compile app to /var/www/html
-
-``` cp -r ./dist/* /var/www/html ```
 
 ## Implementing SSL
 https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-18-04
