@@ -10,6 +10,18 @@ Install package directory
 
 ``` npm install ```
 
+Start Angular without proxy
+```
+ng serve 
+```
+Start Angular with proxy
+```
+ng serve --proxy-config proxy.conf.json
+```
+or
+```
+npm start
+```
 
 ## Angular Front-End
 
