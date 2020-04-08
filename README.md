@@ -3,10 +3,14 @@
 ## Resuming project after cloning from GitHub
 
 Update dependancies
+```
+npm update
+```
 
-``` npm update ```
 Install package directory
-``` npm install ```
+```
+npm install
+```
 
 Start Angular without proxy
 ```
