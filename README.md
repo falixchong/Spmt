@@ -5,9 +5,7 @@
 Update dependancies
 
 ``` npm update ```
-
 Install package directory
-
 ``` npm install ```
 
 Start Angular without proxy
@@ -26,37 +24,47 @@ npm start
 ## Angular Front-End
 
 Install curl
-
-``` apt-get install curl ```
+``` 
+apt-get install curl
+```
 
 Install npm
-
-``` apt-get install nodejs ```
+```
+apt-get install nodejs
+```
 
 Install angular
-
-``` npm install -g angular-cli ```
+```
+npm install -g angular-cli
+```
 
 Install Angular Material
-
-``` ng add @angular/material ```
+```
+ng add @angular/material
+```
 
 Generating Angular Project
-
-``` ng new <project-name> ```
+```
+ng new <project-name>
+```
 
 Generating Angular Module & Routing
 
-``` ng generate module <module> --routing ```
+```
+ng generate module <module> --routing
+```
 
 Generating Angular Component
 
-``` ng generate component <module-path>\<component> --module <module-name> ```
+```
+ng generate component <module-path>\<component> --module <module-name>
+```
 
 Start Angular without proxy
 ```
 ng serve 
 ```
+
 Start Angular with proxy
 ```
 ng serve --proxy-config proxy.conf.json
@@ -65,6 +73,7 @@ or
 ```
 npm start
 ```
+
 proxy conf example
 ```
 {
@@ -82,7 +91,9 @@ proxy conf example
 ## Angular Material
 
 Install Angular Material
-``` ng add @angular/material ```
+```
+ng add @angular/material 
+```
 
 Create a Matariel Module file and import into app.module.ts
 ```
@@ -192,19 +203,23 @@ https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-
 
 Build App
 
-``` ng build --prod ```
+```
+ng build --prod
+```
 
 
 ## Implementing SSL
 https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-18-04
 
 Instead of 
-
-``` sudo certbot --apache -d your_domain -d www.your_domain ```
+```
+sudo certbot --apache -d your_domain -d www.your_domain
+```
 
 Use below to generate the cert only and later add-on to nginx config
-
-``` certbot certonly --standalone -d spointment.com -d www.spointment.com ```
+```
+certbot certonly --standalone -d spointment.com -d www.spointment.com
+```
 
 Use mozilla SSL cert configurator to generate NGINX configuration
 
@@ -217,7 +232,10 @@ Replace generated nginx config with
     ssl_trusted_certificate <letencrypt path>/chain.pem;
 ```
 
-Replace Nginx configuration in ```/etc/nginx/```
+Replace Nginx configuration in 
+```
+/etc/nginx/
+```
 
 
 ## Install MongoDB
