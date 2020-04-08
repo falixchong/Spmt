@@ -27,11 +27,6 @@ npm start
 
 ## Angular Front-End
 
-Install curl
-``` 
-apt-get install curl
-```
-
 Install npm
 ```
 apt-get install nodejs
