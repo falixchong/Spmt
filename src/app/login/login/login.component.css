@@ -1,5 +1,5 @@
 .login-container {
-  /* background-image:url("src/assets/images/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png"); */
+  background-image:url("src/assets/images/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png");
   background-color: #004ba0;
   background-position: center;
   background-size: cover;
@@ -81,6 +81,7 @@
   width: 100%;
   display: block;
   font-weight: 700;
+  margin-bottom: 30px;
 }
 
 .login-container .login-wrapper mat-card-header mat-card-title {
@@ -113,4 +114,14 @@
 .login-container .login-wrapper-button button {
   color: #004ba0;
   margin-bottom: 8px;
+}
+
+.court-mgmt-button{
+  position: relative;
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+  width: 100%;
+  border-radius: 10px;
+  max-width: 175px;
 }

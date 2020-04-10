@@ -1,5 +1,9 @@
 <body class="login-container">
+  <button mat-raised-button class="court-mgmt-button" (click)="login()" *ngIf="!authService.isLoggedIn">
+  Court Management
+  </button>
   <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
     <mat-card class="login-box">
       <mat-card-header>
         <mat-card-title>Spointment</mat-card-title>
@@ -15,8 +19,7 @@
             <input matInput placeholder="Password" />
           </mat-form-field>
         </mat-card-content>
-        <!-- <button mat-stroked-button color="accent" class="btn-block" routerLink='/nav'>Log in</button> -->
-        <!-- <button mat-stroked-button color="accent" class="btn-block" routerLink='/register'>Register</button> -->
+
       </form>
       <div class="login-wrapper-button">
         <button mat-stroked-button class="btn-block" (click)="login()" *ngIf="!authService.isLoggedIn">

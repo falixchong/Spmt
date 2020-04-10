@@ -1,5 +1,5 @@
 .register-container {
-  /* background-image:url("src/assets/images/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png"); */
+  background-image:url("src/assets/images/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png");
   background-color: #004ba0;
   background-position: center;
   background-size: cover;
@@ -81,6 +81,7 @@
   width: 100%;
   display: block;
   font-weight: 700;
+  margin-bottom: 30px;
 }
 
 .register-container .register-wrapper mat-card-header mat-card-title {
