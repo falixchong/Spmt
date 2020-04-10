@@ -10,22 +10,6 @@
   bottom: 15px;
 }
 
-/* .join-sport-chip-list{
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px; 
-}
-
-.join-sport-chip{
-  margin-left: 10px;
-  margin-right: 5px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  background-color: #1976d2;
-  color: #ffffff;
-} */
-
 .join-sport-card-button-icon{
   margin-left: 5px;
   margin-right: 5px;
@@ -42,7 +26,6 @@
   padding-left: 4px;
   background-color: #1976d2;
   color: #ffffff;
-  /* z-index: 8; */
 }
 
 .join-sport-card-more-button {
@@ -61,7 +44,6 @@
   background-size: cover;
   height: 200px;
   width: 100%;
-  /* z-index: 2; */
 }
 
 .join-sport-card-button {

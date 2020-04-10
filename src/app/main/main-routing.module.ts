@@ -5,6 +5,7 @@ import { AuthGuard } from '../auth/auth.guard';
 import { JoinSportComponent } from './join-sport/join-sport.component';
 import { HostSportComponent } from './host-sport/host-sport.component';
 import { SportGameComponent } from './sport-game/sport-game.component';
+import { YourSportsComponent } from './your-sports/your-sports.component';
 
 let navigationExtras: NavigationExtras = {
   queryParamsHandling: 'preserve',
@@ -31,7 +32,8 @@ const routes: Routes = [
           { path: 'join-sport', component: JoinSportComponent },
           { path: 'sport-game', component: SportGameComponent },
           { path: 'sport-game/:id', component: SportGameComponent },
-          { path: 'host-sport', component: HostSportComponent }
+          { path: 'host-sport', component: HostSportComponent },
+          { path: 'your-sports', component: YourSportsComponent }
         ]
       }
     ]
