@@ -71,6 +71,11 @@
   color: #ffffff;
 }
 
+.nav-toolbar-avatar {
+  background-image: url('src/assets/images/doge_cropped.jpg');
+  background-size: cover;
+}
+
 .nav-content {
   background-color: #e4e4e4;
 }

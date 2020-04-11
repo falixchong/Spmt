@@ -19,6 +19,7 @@ import { SportGameComponent } from './sport-game/sport-game.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from "@angular/common/http";
 import { YourSportsComponent } from './your-sports/your-sports.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { YourSportsComponent } from './your-sports/your-sports.component';
     JoinSportComponent,
     HostSportComponent,
     SportGameComponent,
-    YourSportsComponent
+    YourSportsComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
