@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-host-sport',
   templateUrl: './host-sport.component.html',
-  styleUrls: ['./host-sport.component.css']
+  styleUrls: ['./host-sport.component.scss']
 })
 export class HostSportComponent {
   guid: string;

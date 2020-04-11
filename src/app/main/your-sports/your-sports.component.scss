@@ -1,0 +1,59 @@
+.your-sports-tabs {
+  background: #e4e4e4;
+  border-radius: 5px;
+  margin: 0px;
+
+  .your-sports-container {
+    margin: 0px;
+
+    .your-sports-dashboard-card {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+    }
+
+    .your-sports-card-avatar {
+      background-image: url('src/assets/images/doge_cropped.jpg');
+      background-size: cover;
+    }
+
+    .your-sports-card-more-button {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+    }
+
+    .your-sports-card-image {
+      background-image: url('src/assets/images/img_badminton_cropped_flip.jpg');
+      background-size: cover;
+      height: 200px;
+      width: 100%;
+
+      .your-sports-card-button-icon {
+        margin: 5px;
+        background-color: #1976d2;
+        color: #ffffff;
+      }
+
+      .your-sports-card-icon {
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 3px;
+        padding-left: 4px;
+        background-color: #1976d2;
+        color: #ffffff;
+      }
+    }
+
+    .your-sports-card-button {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: #1976d2;
+      color: #ffffff;
+    }
+  }
+
+
+}

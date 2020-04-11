@@ -8,7 +8,7 @@ import { DomSanitizer } from "@angular/platform-browser";
 @Component({
   selector: 'app-your-sports',
   templateUrl: './your-sports.component.html',
-  styleUrls: ['./your-sports.component.css']
+  styleUrls: ['./your-sports.component.scss']
 })
 export class YourSportsComponent {
 

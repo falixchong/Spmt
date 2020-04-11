@@ -8,7 +8,7 @@ import { DomSanitizer } from "@angular/platform-browser";
 @Component({
   selector: 'app-join-sport',
   templateUrl: './join-sport.component.html',
-  styleUrls: ['./join-sport.component.css']
+  styleUrls: ['./join-sport.component.scss']
 })
 export class JoinSportComponent {
   /** Based on the screen size, switch from standard to one column per row */

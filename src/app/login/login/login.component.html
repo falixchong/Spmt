@@ -5,7 +5,7 @@
   <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
 
     <mat-card class="login-box">
-      <mat-card-header>
+      <mat-card-header class="login-card-header">
         <mat-card-title>Spointment</mat-card-title>
       </mat-card-header>
 
@@ -22,22 +22,17 @@
 
       </form>
       <div class="login-wrapper-button">
-        <button mat-stroked-button class="btn-block" (click)="login()" *ngIf="!authService.isLoggedIn">
+        <button mat-stroked-button class="login-button" (click)="login()" *ngIf="!authService.isLoggedIn">
           Log In
         </button>
-        <button mat-stroked-button class="btn-block" (click)="logout()" *ngIf="authService.isLoggedIn">
+        <button mat-stroked-button class="login-button" (click)="logout()" *ngIf="authService.isLoggedIn">
           Log Out
         </button>
-        <button mat-stroked-button class="btn-block" routerLink="/register" routerLinkActive="active">
+        <button mat-stroked-button class="login-button" routerLink="/register" routerLinkActive="active">
           Register
         </button>
       </div>
     </mat-card>
   </div>
 </body>
-
-<!-- <button mat-raised-button color="primary" (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-<button mat-raised-button color="primary" (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
-<button mat-raised-button color="primary" routerLink="/register" routerLinkActive="active">Register</button> -->
-<!-- <p >{{message}}</p> -->
 <router-outlet></router-outlet>

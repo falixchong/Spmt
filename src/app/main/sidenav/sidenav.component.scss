@@ -1,0 +1,77 @@
+/* .active-list-item {
+  background-color: #1976d2 !important; 
+  color: #ffffff;
+} */
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .nav-toolbar {
+    background-color: #004ba0;
+    color: #ffffff;
+    position: relative;
+
+    .nav-app-name {
+      margin-left: 8px;
+    }
+
+    .nav-toolbar-fill-remaining-space {
+      flex: 1 1 auto;
+    }
+
+    .nav-toolbar-button-group {
+      button {
+        margin-right: 8px;
+      }
+      .nav-toolbar-profile-button {
+        background-color: #1976d2;
+        color: #ffffff;
+      }
+      .nav-toolbar-avatar {
+        background-image: url('src/assets/images/doge_cropped.jpg');
+        background-size: cover;
+      }
+      .nav-toolbar-logout-button {
+        background-color: #1976d2;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .nav-sidenav-container {
+    flex: 1;
+    .nav-content {
+      background-color: #e4e4e4;
+    }
+    
+  }
+}
+
+.nav-is-mobile {
+  .nav-toolbar {
+    position: fixed;
+    z-index: 2;
+
+    .mat-toolbar {
+      position: relative;
+      z-index: 8;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
