@@ -1,10 +1,10 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
-import { AuthGuard } from './auth/auth.guard';
-import { MainModule } from './main/main.module';
 
 const routes: Routes = [
+  { path: 'login', redirectTo: '/login', pathMatch: 'full'},
+  { path: 'register', redirectTo: '/register', pathMatch: 'full'},
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

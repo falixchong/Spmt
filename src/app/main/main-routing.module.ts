@@ -7,6 +7,7 @@ import { HostSportComponent } from './host-sport/host-sport.component';
 import { SportGameComponent } from './sport-game/sport-game.component';
 import { YourSportsComponent } from './your-sports/your-sports.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PageNotFoundComponent } from '../common/page-not-found/page-not-found.component'
 
 let navigationExtras: NavigationExtras = {
   queryParamsHandling: 'preserve',
@@ -35,7 +36,8 @@ const routes: Routes = [
           { path: 'sport-game/:id', component: SportGameComponent },
           { path: 'host-sport', component: HostSportComponent },
           { path: 'your-sports', component: YourSportsComponent },
-          { path: 'profile', component: ProfileComponent }
+          { path: 'profile', component: ProfileComponent },
+          { path: '**', component: PageNotFoundComponent }
         ]
       }
     ]
