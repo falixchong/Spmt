@@ -1,7 +1,5 @@
-/* .active-list-item {
-  background-color: #1976d2 !important; 
-  color: #ffffff;
-} */
+@import "../../../colors";
+
 .nav-container {
   display: flex;
   flex-direction: column;
@@ -12,8 +10,6 @@
   right: 0;
 
   .nav-toolbar {
-    background-color: #004ba0;
-    color: #ffffff;
     position: relative;
 
     .nav-app-name {
@@ -24,35 +20,30 @@
       flex: 1 1 auto;
     }
 
+    .nav-sidenav-button {
+      margin-right: 0px;
+    }
+
     .nav-toolbar-button-group {
-      button {
-        margin-right: 8px;
-      }
 
       .nav-toolbar-profile-button {
-        background-color: #1976d2;
-        color: #ffffff;
+        margin-right: 8px;
       }
 
       .nav-toolbar-avatar {
         background-image: url('src/assets/images/doge_cropped.jpg');
         background-size: cover;
+        margin-right: 8px;
       }
 
       .nav-toolbar-logout-button {
-        background-color: #1976d2;
-        color: #ffffff;
+        margin-right: 8px;
       }
     }
   }
 
   .nav-sidenav-container {
     flex: 1;
-
-    .nav-content {
-      background-color: #e4e4e4;
-    }
-
   }
 }
 

@@ -1,5 +1,5 @@
 <mat-tab-group mat-stretch-tabs class="your-sports-tabs mat-elevation-z4">
-  <mat-tab label="Joined">
+  <mat-tab label="Joined" color="primary">
     <div class="your-sports-container">
       <mat-grid-list cols="2" rowHeight="360px">
         <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
@@ -23,8 +23,9 @@
             </mat-card-header>
             <mat-card-content>
               <div class="your-sports-card-image" fxLayout="row" fxLayoutAlign="end start">
-                <button class="your-sports-card-button-icon mat-elevation-z8" mat-icon-button aria-label="badminton">
-                  <mat-icon class="your-sports-card-icon" svgIcon="badminton">Badminton</mat-icon>
+                <button class="your-sports-card-button-icon mat-elevation-z8" mat-icon-button color="primary"
+                  aria-label="badminton">
+                  <mat-icon class="your-sports-card-icon" color="primary" svgIcon="badminton">B</mat-icon>
                 </button>
               </div>
               <div fxLayout="row" fxLayoutAlign="space-between center">
@@ -43,7 +44,7 @@
       </mat-grid-list>
     </div>
   </mat-tab>
-  <mat-tab label="Hosted">
+  <mat-tab label="Hosted" color="primary">
     <div class="your-sports-container">
       <mat-grid-list cols="2" rowHeight="360px">
         <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
@@ -67,8 +68,9 @@
             </mat-card-header>
             <mat-card-content>
               <div class="your-sports-card-image" fxLayout="row" fxLayoutAlign="end start">
-                <button class="your-sports-card-button-icon mat-elevation-z8" mat-icon-button aria-label="badminton">
-                  <mat-icon class="your-sports-card-icon" svgIcon="badminton">Badminton</mat-icon>
+                <button class="your-sports-card-button-icon mat-elevation-z8" mat-icon-button color="primary"
+                  aria-label="badminton">
+                  <mat-icon class="your-sports-card-icon" color="primary" svgIcon="badminton">B</mat-icon>
                 </button>
               </div>
               <div fxLayout="row" fxLayoutAlign="space-between center">
@@ -87,7 +89,7 @@
       </mat-grid-list>
     </div>
   </mat-tab>
-  <mat-tab label="Liked">
+  <mat-tab label="Liked" color="primary">
     <div class="your-sports-container">
       <mat-grid-list cols="2" rowHeight="360px">
         <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
@@ -111,8 +113,9 @@
             </mat-card-header>
             <mat-card-content>
               <div class="your-sports-card-image" fxLayout="row" fxLayoutAlign="end start">
-                <button class="your-sports-card-button-icon mat-elevation-z8" mat-icon-button aria-label="badminton">
-                  <mat-icon class="your-sports-card-icon" svgIcon="badminton">Badminton</mat-icon>
+                <button class="your-sports-card-button-icon mat-elevation-z8" mat-icon-button color="primary"
+                  aria-label="badminton">
+                  <mat-icon class="your-sports-card-icon" color="primary" svgIcon="badminton">B</mat-icon>
                 </button>
               </div>
               <div fxLayout="row" fxLayoutAlign="space-between center">

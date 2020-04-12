@@ -1,6 +1,8 @@
+@import "../../../colors";
+
 .login-container {
   background-image: url("src/assets/images/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png");
-  background-color: #ffffff;
+  background-color: $primaryBackgroundColor;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -37,7 +39,7 @@
       float: left;
       padding: 40px 70px 50px;
       width: 100%;
-      background: #fff;
+      background: $primaryBackgroundColor;
       border-radius: 10px;
       transform: translate(-50%, -50%);
       z-index: 5;
@@ -51,7 +53,7 @@
         border-radius: 10px;
         position: absolute;
         top: -10px;
-        background: rgba(255, 255, 255, 0.6);
+        background: $primaryBackgroundShadowColor;
         left: 0;
         transform: scale(0.95);
         -webkit-transform: scale(0.95);
@@ -84,12 +86,10 @@
 
       .login-wrapper-button {
         .login-button {
-          color: #004ba0;
           margin-bottom: 8px;
           width: 100%;
           border: 1px solid currentColor;
           line-height: 54px;
-          background: #ffffff;
         }
       }
     }

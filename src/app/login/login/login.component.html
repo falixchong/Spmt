@@ -22,13 +22,16 @@
 
       </form>
       <div class="login-wrapper-button">
-        <button mat-stroked-button class="login-button" (click)="login()" *ngIf="!authService.isLoggedIn">
+        <button mat-stroked-button color="primary" class="login-button" (click)="login()"
+          *ngIf="!authService.isLoggedIn">
           Log In
         </button>
-        <button mat-stroked-button class="login-button" (click)="logout()" *ngIf="authService.isLoggedIn">
+        <button mat-stroked-button color="primary" class="login-button" (click)="logout()"
+          *ngIf="authService.isLoggedIn">
           Log Out
         </button>
-        <button mat-stroked-button class="login-button" routerLink="/register" routerLinkActive="active">
+        <button mat-stroked-button color="primary" class="login-button" routerLink="/register"
+          routerLinkActive="active">
           Register
         </button>
       </div>

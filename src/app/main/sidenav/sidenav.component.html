@@ -1,15 +1,15 @@
 <div class="nav-container" [class.nav-is-mobile]="mobileQuery.matches">
-  <mat-toolbar class="nav-toolbar mat-elevation-z8">
-    <button mat-icon-button aria-label="Toggle sidenav" (click)="snav.toggle()">
+  <mat-toolbar class="nav-toolbar mat-elevation-z8" color="primary">
+    <button mat-icon-button class="nav-sidenav-button" aria-label="Toggle sidenav" (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
     <h1 class="nav-app-name">Spointment</h1>
     <span class="nav-toolbar-fill-remaining-space"></span>
     <div class="nav-toolbar-button-group">
-      <button class="nav-toolbar-profile-button nav-toolbar-avatar" mat-mini-fab aria-label="User Profile"
-        routerLink="./profile">
+      <button class="nav-toolbar-profile-button nav-toolbar-avatar" mat-mini-fab color="primary"
+        aria-label="User Profile" routerLink="./profile">
       </button>
-      <button class="nav-toolbar-logout-button" mat-raised-button (click)="logout()">
+      <button class="nav-toolbar-logout-button" mat-raised-button color="primary" (click)="logout()">
         Log Out
       </button>
     </div>
@@ -30,7 +30,7 @@
       </mat-nav-list>
     </mat-sidenav>
 
-    <mat-sidenav-content class="nav-content">
+    <mat-sidenav-content class="nav-content" color="primary">
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

@@ -1,2 +1,73 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "./colors";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: $secondaryLightColor;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  color: $secondaryLightColor;
+  background-color: $secondaryLightColor;
+}
+
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+  background-color: $secondaryLightColor;
+}
+
+
+.mat-button.mat-primary,
+.mat-stroked-button.mat-primary {
+  color: $primaryColor;
+}
+
+.mat-button.mat-primary:hover,
+.mat-stroked-button.mat-primary:hover {
+  background-color: $primaryBackgroundColor;
+}
+
+.mat-raised-button.mat-primary,
+.mat-flat-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-icon.mat-primary,
+.mat-icon-button.mat-primary,
+.mat-chip.mat-primary {
+  color: $primaryBackgroundColor;
+  background-color: $primaryColor;
+}
+
+
+.mat-toolbar.mat-primary {
+  background-color: $primaryDarkColor;
+  color: $primaryBackgroundColor;
+}
+
+.nav-content {
+  background-color: $primaryBackgroundDarkColor;
+}
+
+.mat-tab.mat-primary {
+  background: $primaryBackgroundDarkColor;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: $primaryColor
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: $primaryColor
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: $primaryColor
+}

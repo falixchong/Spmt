@@ -1,3 +1,5 @@
+@import "../../../colors";
+
 html {
   height: 100%;
 }
@@ -49,7 +51,7 @@ p {
 }
 
 .profile-card {
-  background: #004ba0;
+  background: $primaryColor;
   width: 56px;
   height: 56px;
   position: absolute;
@@ -100,11 +102,11 @@ p {
         right: 3px;
         width: 20px;
         height: 20px;
-        border: 4px solid #FFFFFF;
+        border: 4px solid $primaryBackgroundColor;
         -webkit-transform: scale(0);
         transform: scale(0);
-        background: -webkit-linear-gradient(top, #2196F3 0%, #2196F3 50%, #FFC107 50%, #FFC107 100%);
-        background: linear-gradient(#2196F3 0%, #2196F3 50%, #FFC107 50%, #FFC107 100%);
+        background: -webkit-linear-gradient(top, $primaryDarkColor 0%, $primaryLightColor 50%, $secondaryColor 50%, $secondaryColor 100%);
+        background: linear-gradient($primaryDarkColor 0%, $primaryLightColor 50%, $secondaryColor 50%, $secondaryColor 100%);
         -webkit-border-radius: 50%;
         border-radius: 50%;
         -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
@@ -139,7 +141,7 @@ p {
     display: inline-block;
     float: right;
     padding: 50px 20px 30px 20px;
-    background: #FFFFFF;
+    background: $primaryBackgroundColor;
     color: #333333;
     margin-top: 50px;
     text-align: center;
@@ -155,7 +157,7 @@ p {
   float: right;
   margin: 0px;
   padding: 15px 20px;
-  background: #FFFFFF;
+  background: $primaryBackgroundColor;
   margin-top: 50px;
   text-align: center;
   opacity: 0;
@@ -444,13 +446,13 @@ p {
 
   100% {
     top: 50%;
-    background: #E0E0E0;
+    background: $primaryBackgroundDarkColor;
   }
 }
 
 @keyframes moveUp {
   0% {
-    background: #004ba0;
+    background: $primaryLightColor;
     top: 100%;
   }
 
@@ -460,13 +462,13 @@ p {
 
   100% {
     top: 50%;
-    background: #E0E0E0;
+    background: $primaryBackgroundDarkColor;
   }
 }
 
 @-webkit-keyframes materia_landscape {
   0% {
-    background: #E0E0E0;
+    background: $primaryBackgroundDarkColor;
   }
 
   50% {
@@ -476,14 +478,14 @@ p {
   100% {
     width: 97%;
     height: 97%;
-    background: #FFFFFF;
+    background: $primaryBackgroundColor;
     -webkit-border-radius: 4px;
   }
 }
 
 @keyframes materia_landscape {
   0% {
-    background: #E0E0E0;
+    background: $primaryBackgroundDarkColor;
   }
 
   50% {
@@ -493,14 +495,14 @@ p {
   100% {
     width: 97%;
     height: 97%;
-    background: #FFFFFF;
+    background: $primaryBackgroundColor;
     border-radius: 4px;
   }
 }
 
 @-webkit-keyframes materia_portrait {
   0% {
-    background: #E0E0E0;
+    background: $primaryBackgroundDarkColor;
   }
 
   50% {
@@ -510,14 +512,14 @@ p {
   100% {
     width: 97%;
     height: 97%;
-    background: #FFFFFF;
+    background: $primaryBackgroundColor;
     -webkit-border-radius: 4px;
   }
 }
 
 @keyframes materia_portrait {
   0% {
-    background: #E0E0E0;
+    background: $primaryBackgroundDarkColor;
   }
 
   50% {
@@ -527,7 +529,7 @@ p {
   100% {
     width: 97%;
     height: 97%;
-    background: #FFFFFF;
+    background: $primaryBackgroundColor;
     border-radius: 4px;
   }
 }
