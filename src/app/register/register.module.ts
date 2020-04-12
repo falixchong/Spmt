@@ -9,4 +9,4 @@ import { RegisterComponent } from './register/register.component';
   declarations: [RegisterComponent],
   imports: [CommonModule, RegisterRoutingModule, AngularMaterialModule]
 })
-export class RegisterModule {}
+export class RegisterModule { }

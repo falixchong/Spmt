@@ -49,4 +49,4 @@ import { ProfileComponent } from './profile/profile.component';
     HttpClientModule
   ]
 })
-export class MainModule {}
+export class MainModule { }

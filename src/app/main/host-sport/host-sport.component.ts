@@ -69,14 +69,14 @@ export class HostSportComponent {
       this.http.post('/api/v1/sport_game', data).subscribe(
         (data: any) => {
           // let path = 'main/sport-game/' + data.sportGame.gid;
-  
+
           //console.log('SERVER POST RESPONSE');
           //console.log(data);
-  
+
           let path = 'main/sport-game/' + data.sportGame.gid;
           //console.log('ROUTE TO SPORT GAME');
           //console.log(path);
-          this.router.navigate([path]);         
+          this.router.navigate([path]);
         },
         error => {
           this.serviceErrors = error.error.error;

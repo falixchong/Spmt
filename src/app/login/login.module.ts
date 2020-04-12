@@ -9,4 +9,4 @@ import { LoginComponent } from './login/login.component';
   declarations: [LoginComponent],
   imports: [CommonModule, LoginRoutingModule, AngularMaterialModule]
 })
-export class LoginModule {}
+export class LoginModule { }

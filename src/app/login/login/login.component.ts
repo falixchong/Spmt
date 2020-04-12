@@ -10,9 +10,9 @@ import { AuthService } from '../../auth/auth.service';
 export class LoginComponent implements OnInit {
   message: string;
 
-  constructor(public authService: AuthService, public router: Router) {}
+  constructor(public authService: AuthService, public router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   login() {
     this.message = 'Trying to log in ...';

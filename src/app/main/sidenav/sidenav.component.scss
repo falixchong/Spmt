@@ -28,14 +28,17 @@
       button {
         margin-right: 8px;
       }
+
       .nav-toolbar-profile-button {
         background-color: #1976d2;
         color: #ffffff;
       }
+
       .nav-toolbar-avatar {
         background-image: url('src/assets/images/doge_cropped.jpg');
         background-size: cover;
       }
+
       .nav-toolbar-logout-button {
         background-color: #1976d2;
         color: #ffffff;
@@ -45,10 +48,11 @@
 
   .nav-sidenav-container {
     flex: 1;
+
     .nav-content {
       background-color: #e4e4e4;
     }
-    
+
   }
 }
 
@@ -64,14 +68,3 @@
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-

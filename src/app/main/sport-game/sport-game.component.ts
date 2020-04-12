@@ -13,7 +13,7 @@ export class SportGameComponent implements OnInit {
     private http: HttpClient,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   private subscriber: any;
 
