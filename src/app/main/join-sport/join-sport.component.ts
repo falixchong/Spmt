@@ -4,6 +4,7 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
 	selector: 'app-join-sport',
@@ -41,7 +42,7 @@ export class JoinSportComponent {
 	) {
 		this.matIconRegistry.addSvgIcon(
 			'badminton',
-			this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/images/badminton.svg')
+			this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/svg/badminton.svg')
 		);
 	}
 }

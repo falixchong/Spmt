@@ -41,7 +41,7 @@ export class YourSportsComponent {
 	) {
 		this.matIconRegistry.addSvgIcon(
 			'badminton',
-			this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/images/badminton.svg')
+			this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/svg/badminton.svg')
 		);
 	}
 }
