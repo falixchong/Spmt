@@ -1,61 +1,63 @@
 @import "../../../colors";
 
 .nav-container {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 
-  .nav-toolbar {
-    position: relative;
+	.nav-toolbar {
+		position: relative;
 
-    .nav-app-name {
-      margin-left: 8px;
-    }
+		.nav-app-name {
+			margin-left: 8px;
+		}
 
-    .nav-toolbar-fill-remaining-space {
-      flex: 1 1 auto;
-    }
+		.nav-toolbar-fill-remaining-space {
+			flex: 1 1 auto;
+		}
 
-    .nav-sidenav-button {
-      margin-right: 0px;
-    }
+		.nav-sidenav-button {
+			margin-right: 0px;
+		}
 
-    .nav-toolbar-button-group {
+		.nav-toolbar-button-group {
+			.nav-toolbar-profile-button {
+				margin-right: 8px;
+			}
 
-      .nav-toolbar-profile-button {
-        margin-right: 8px;
-      }
+			.nav-toolbar-avatar {
+				background-image: url('src/assets/images/doge_cropped.jpg');
+				background-size: cover;
+				margin-right: 8px;
+			}
 
-      .nav-toolbar-avatar {
-        background-image: url('src/assets/images/doge_cropped.jpg');
-        background-size: cover;
-        margin-right: 8px;
-      }
+			.nav-toolbar-logout-button {
+				margin-right: 8px;
+			}
+		}
+	}
 
-      .nav-toolbar-logout-button {
-        margin-right: 8px;
-      }
-    }
-  }
+	.nav-sidenav-container {
+		flex: 1;
 
-  .nav-sidenav-container {
-    flex: 1;
-  }
+		.nav-content {
+			background-color: $primaryBackgroundDarkColor;
+		}
+	}
 }
 
 .nav-is-mobile {
-  .nav-toolbar {
-    position: fixed;
-    z-index: 2;
+	.nav-toolbar {
+		position: fixed;
+		z-index: 2;
 
-    .mat-toolbar {
-      position: relative;
-      z-index: 8;
-    }
-  }
-
+		.mat-toolbar {
+			position: relative;
+			z-index: 8;
+		}
+	}
 }

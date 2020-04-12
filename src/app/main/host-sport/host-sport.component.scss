@@ -1,35 +1,35 @@
 @import "../../../colors";
 
 .host-sport-container {
-  .host-sport-card {
-    margin: 15px;
+	.host-sport-card {
+		margin: 15px;
 
-    .host-sport-row {
-      display: flex;
-      flex-direction: row;
+		.host-sport-row {
+			display: flex;
+			flex-direction: row;
 
-      .host-sport-col {
-        flex: 1;
-        margin-right: 20px;
+			.host-sport-col {
+				flex: 1;
+				margin-right: 20px;
 
-        &:last-child {
-          margin-right: 0;
-        }
+				&:last-child {
+					margin-right: 0;
+				}
 
-        .host-sport-input {
-          width: 100%;
-        }
+				.host-sport-input {
+					width: 100%;
+				}
 
-        .host-sport-radio-button {
-          display: block;
-          margin: 5px 0;
-        }
-      }
-    }
+				.host-sport-radio-button {
+					display: block;
+					margin: 5px 0;
+				}
+			}
+		}
 
-    .host-sport-row-spacing {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-  }
+		.host-sport-row-spacing {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	}
 }

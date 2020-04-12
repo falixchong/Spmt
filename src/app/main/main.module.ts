@@ -17,36 +17,35 @@ import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SportGameComponent } from './sport-game/sport-game.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 import { YourSportsComponent } from './your-sports/your-sports.component';
 import { ProfileComponent } from './profile/profile.component';
 
-
 @NgModule({
-  declarations: [
-    SidenavComponent,
-    JoinSportComponent,
-    HostSportComponent,
-    SportGameComponent,
-    YourSportsComponent,
-    ProfileComponent
-  ],
-  imports: [
-    CommonModule,
-    AngularMaterialModule,
-    MainRoutingModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    LayoutModule,
-    MatInputModule,
-    MatSelectModule,
-    MatRadioModule,
-    ReactiveFormsModule,
-    FlexLayoutModule,
-    HttpClientModule
-  ]
+	declarations: [
+		SidenavComponent,
+		JoinSportComponent,
+		HostSportComponent,
+		SportGameComponent,
+		YourSportsComponent,
+		ProfileComponent
+	],
+	imports: [
+		CommonModule,
+		AngularMaterialModule,
+		MainRoutingModule,
+		MatGridListModule,
+		MatCardModule,
+		MatMenuModule,
+		MatIconModule,
+		MatButtonModule,
+		LayoutModule,
+		MatInputModule,
+		MatSelectModule,
+		MatRadioModule,
+		ReactiveFormsModule,
+		FlexLayoutModule,
+		HttpClientModule
+	]
 })
-export class MainModule { }
+export class MainModule {}

@@ -10,31 +10,33 @@ import { MatSelectModule } from '@angular/material/select';
 import { HostSportComponent } from './host-sport.component';
 
 describe('HostSportComponent', () => {
-  let component: HostSportComponent;
-  let fixture: ComponentFixture<HostSportComponent>;
+	let component: HostSportComponent;
+	let fixture: ComponentFixture<HostSportComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [HostSportComponent],
-      imports: [
-        NoopAnimationsModule,
-        ReactiveFormsModule,
-        MatButtonModule,
-        MatCardModule,
-        MatInputModule,
-        MatRadioModule,
-        MatSelectModule
-      ]
-    }).compileComponents();
-  }));
+	beforeEach(
+		async(() => {
+			TestBed.configureTestingModule({
+				declarations: [ HostSportComponent ],
+				imports: [
+					NoopAnimationsModule,
+					ReactiveFormsModule,
+					MatButtonModule,
+					MatCardModule,
+					MatInputModule,
+					MatRadioModule,
+					MatSelectModule
+				]
+			}).compileComponents();
+		})
+	);
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HostSportComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(HostSportComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should compile', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should compile', () => {
+		expect(component).toBeTruthy();
+	});
 });

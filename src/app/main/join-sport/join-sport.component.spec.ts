@@ -10,31 +10,33 @@ import { MatMenuModule } from '@angular/material/menu';
 import { JoinSportComponent } from './join-sport.component';
 
 describe('JoinSportComponent', () => {
-  let component: JoinSportComponent;
-  let fixture: ComponentFixture<JoinSportComponent>;
+	let component: JoinSportComponent;
+	let fixture: ComponentFixture<JoinSportComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [JoinSportComponent],
-      imports: [
-        NoopAnimationsModule,
-        LayoutModule,
-        MatButtonModule,
-        MatCardModule,
-        MatGridListModule,
-        MatIconModule,
-        MatMenuModule
-      ]
-    }).compileComponents();
-  }));
+	beforeEach(
+		async(() => {
+			TestBed.configureTestingModule({
+				declarations: [ JoinSportComponent ],
+				imports: [
+					NoopAnimationsModule,
+					LayoutModule,
+					MatButtonModule,
+					MatCardModule,
+					MatGridListModule,
+					MatIconModule,
+					MatMenuModule
+				]
+			}).compileComponents();
+		})
+	);
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(JoinSportComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(JoinSportComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should compile', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should compile', () => {
+		expect(component).toBeTruthy();
+	});
 });

@@ -14,21 +14,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    AngularMaterialModule,
-    HttpClientModule,
-    LoginModule,
-    RegisterModule,
-    MainModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [ AppComponent, PageNotFoundComponent ],
+	imports: [
+		BrowserModule,
+		BrowserAnimationsModule,
+		FlexLayoutModule,
+		AngularMaterialModule,
+		HttpClientModule,
+		LoginModule,
+		RegisterModule,
+		MainModule,
+		AppRoutingModule,
+		FormsModule,
+		ReactiveFormsModule
+	],
+	providers: [],
+	bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {}

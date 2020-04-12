@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+	selector: 'app-register',
+	templateUrl: './register.component.html',
+	styleUrls: [ './register.component.scss' ]
 })
 export class RegisterComponent implements OnInit {
-  Roles: any = ['Admin', 'Author', 'Reader'];
-  selected: '';
+	Roles: any = [ 'Admin', 'Author', 'Reader' ];
+	selected: '';
 
-  constructor() { }
+	constructor() {}
 
-  ngOnInit(): void { }
+	ngOnInit(): void {}
 }
