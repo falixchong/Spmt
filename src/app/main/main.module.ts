@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { AngularMaterialModule } from '../material-module';
 import { MainRoutingModule } from './main-routing.module';
@@ -31,6 +33,8 @@ import { ProfileComponent } from './profile/profile.component';
 		ProfileComponent
 	],
 	imports: [
+		BrowserModule,
+		BrowserAnimationsModule,
 		CommonModule,
 		AngularMaterialModule,
 		MainRoutingModule,

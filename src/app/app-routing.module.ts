@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-	{ path: 'login', redirectTo: '/login', pathMatch: 'full' },
-	{ path: 'register', redirectTo: '/register', pathMatch: 'full' },
+	{ path: 'login', redirectTo: '/login', pathMatch: 'full', data: { animation: 'Login' } },
+	{ path: 'register', redirectTo: '/register', pathMatch: 'full', data: { animation: 'Register' } },
 	{ path: '', redirectTo: '/login', pathMatch: 'full' },
 	{ path: '**', component: PageNotFoundComponent }
 ];

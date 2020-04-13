@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
-	styleUrls: [ './login.component.scss' ]
+	styleUrls: [ './login.component.scss' ],
+	animations: []
 })
 export class LoginComponent implements OnInit {
 	message: string;

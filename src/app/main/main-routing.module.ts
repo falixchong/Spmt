@@ -31,27 +31,17 @@ const routes: Routes = [
 				canActivateChild: [ AuthGuard ],
 				children: [
 					{ path: '', redirectTo: 'join-sport', pathMatch: 'full' },
-					{ path: 'join-sport', component: JoinSportComponent },
-					{ path: 'sport-game', component: SportGameComponent },
-					{ path: 'sport-game/:id', component: SportGameComponent },
-					{ path: 'host-sport', component: HostSportComponent },
-					{ path: 'your-sports', component: YourSportsComponent },
-					{ path: 'profile', component: ProfileComponent },
+					{ path: 'join-sport', component: JoinSportComponent, data: { animation: 'JoinSport' } },
+					{ path: 'sport-game', component: SportGameComponent, data: { animation: 'SportGame' } },
+					{ path: 'sport-game/:id', component: SportGameComponent, data: { animation: 'SportGameID' } },
+					{ path: 'host-sport', component: HostSportComponent, data: { animation: 'HostSport' } },
+					{ path: 'your-sports', component: YourSportsComponent, data: { animation: 'YourSports' } },
+					{ path: 'profile', component: ProfileComponent, data: { animation: 'Profile' } },
 					{ path: '**', component: PageNotFoundComponent }
 				]
 			}
 		]
 	}
-	// {
-	//   path: 'join-sport',
-	//   component: SidenavComponent,
-	//   canActivate: [AuthGuard],
-	// },
-	// {
-	//   path: 'host-sport',
-	//   component: SidenavComponent,
-	//   canActivate: [AuthGuard],
-	// }
 ];
 
 @NgModule({
