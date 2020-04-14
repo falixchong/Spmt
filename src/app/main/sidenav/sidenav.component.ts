@@ -1,5 +1,5 @@
 import { MediaMatcher } from '@angular/cdk/layout';
-import { ChangeDetectorRef, HostListener, ViewChild, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, HostListener, ViewChild, Component, OnDestroy, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
 import { Router, NavigationExtras } from '@angular/router';
@@ -17,28 +17,36 @@ import { trigger, state, style, animate, transition, query, animateChild, group 
 			state('in', style({ transform: 'translateX(0)' })),
 			transition(':enter', [
 				style({ transform: 'translateX(-100%)', opacity: 0 }),
-				animate('200ms 100ms ease-in')
+				animate('600ms 100ms ease-in-out')
 			]),
-			transition(':leave', [ animate('200ms 100ms ease-in', style({ transform: 'translateX(100%)' })) ])
+			transition(':leave', [ animate('600ms 100ms ease-in-out', style({ transform: 'translateX(100%)' })) ])
 		]),
 		trigger('routeAnimations', [
-			transition('JoinSport <=> HostSport, JoinSport <=> YourSports, HostSport <=> YourSports', [
+			// cannot use * <=> * or * <=> JoinSport because of side-nav issue
+			// transition('* <=> SportGameID, * <=> YourSports, * <=> HostSport, * <=> Profile', [
+			transition('* => *', [
 				style({ position: 'relative' }),
-				query(':enter, :leave', [
-					style({
-						position: 'absolute',
-						top: 0,
-						left: 0,
-						width: '100%'
-					})
-				]),
-				query(':enter', [ style({ left: '-100%' }) ]),
-				query(':leave', animateChild()),
+				query(
+					':enter, :leave',
+					[
+						style({
+							position: 'absolute',
+							top: 0,
+							left: 0,
+							width: '100%'
+						})
+					],
+					{ optional: true }
+				),
+				query(':enter', [ style({ left: '-100%' }) ], { optional: true }),
+				// query(':leave', animateChild(), { optional: true }),
 				group([
-					query(':leave', [ animate('300ms ease-out', style({ left: '100%' })) ]),
-					query(':enter', [ animate('300ms ease-out', style({ left: '0%' })) ])
+					query(':leave', [ animate('200ms 100ms ease-in-out', style({ left: '100%' })) ], {
+						optional: true
+					}),
+					query(':enter', [ animate('200ms 100ms ease-in-out', style({ left: '0%' })) ], { optional: true })
 				]),
-				query(':enter', animateChild())
+				query(':enter', animateChild(), { optional: true })
 			])
 		])
 	]
@@ -46,7 +54,7 @@ import { trigger, state, style, animate, transition, query, animateChild, group 
 export class SidenavComponent implements OnDestroy, OnInit {
 	@ViewChild('snav') sidenav: any;
 
-	isOpen = true;
+	@HostBinding('@.disabled') public animationsDisabled = false;
 
 	@HostListener('document:keydown', [ '$event' ])
 	handleKeyboardEvent(event: KeyboardEvent) {
@@ -95,7 +103,7 @@ export class SidenavComponent implements OnDestroy, OnInit {
 			queryParamsHandling: 'preserve',
 			preserveFragment: true
 		};
-
+		this.animationsDisabled = !this.animationsDisabled;
 		this.authService.logout();
 		setTimeout(() => this.router.navigate([ '/login' ], navigationExtras), 500);
 	}
