@@ -1,4 +1,4 @@
-# Spmt
+# Spmt - Spointment
 
 ## Resuming project after cloning from GitHub
 
