@@ -63,7 +63,7 @@ export class HostSportComponent {
 					//console.log('SERVER POST RESPONSE');
 					//console.log(data);
 
-					let path = 'main/sport-game/' + data.sportGame.gid;
+					let path = 'main/sport-game/' + data.gid;
 					//console.log('ROUTE TO SPORT GAME');
 					//console.log(path);
 					this.router.navigate([ path ]);

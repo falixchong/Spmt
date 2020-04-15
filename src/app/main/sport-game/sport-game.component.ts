@@ -26,9 +26,9 @@ export class SportGameComponent implements OnInit {
 	ngOnInit(): void {
 		this.subscriber = this.route.params.subscribe((params) => {
 			this.http.get('/api/v1/sport_game/' + params.id).subscribe((data: any) => {
-				this.sportGame = new SportGameModel(data.sportGame);
-				//console.log('DATA');
-				//console.log(data);
+				this.sportGame = new SportGameModel(data);
+				// console.log('DATA');
+				// console.log(this.sportGame);
 			});
 
 			//console.log('GET RESPONSE');
