@@ -250,6 +250,11 @@ db.createUser(
 )
 ```
 
+## Connect to Mongodb
+
+```
+mongo --port 27017 -u "dbadmin" -p "<password>" --authenticationDatabase "admin"
+```
 
 ## Install Jenkins
 https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-18-04
