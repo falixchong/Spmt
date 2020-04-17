@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NgxMaterialTimepickerTheme } from 'ngx-material-timepicker';
 
 @Component({
 	selector: 'app-host-sport',
@@ -18,6 +19,8 @@ export class HostSportComponent {
 		groupName: [ null, Validators.required ],
 		groupDesc: [ null, Validators.required ],
 		location: [ null, Validators.required ],
+		startDateTime: [ null, Validators.required ],
+		time: [ null, Validators.required ],
 		groupType: [ 'public', Validators.required ],
 		groupJoinType: [ 'anyone', Validators.required ],
 		sportType: [ null, Validators.required ]
@@ -45,12 +48,16 @@ export class HostSportComponent {
 
 	onSubmit() {
 		this.submit = true;
-		//console.log('SUBMIT: ' + this.submit);
-		//console.log('POST DATA');
-		//console.log(this.hostSportForm);
+		console.log(this.hostSportForm);
+
+		// console.log(this.hostSportForm.value.startDateTime.toISOString());
+		// var tempDateTime = this.hostSportForm.value.startDateTime.toISOString();
+		// tempDateTime.substring(1, 10);
+		// this.hostSportForm.value.startDateTime = tempDateTime;
+
+		// console.log(this.hostSportForm.value.startDateTime);
 
 		if (this.hostSportForm.invalid) {
-			//console.log('form validation failed');
 			return;
 		} else {
 			let data: any = Object.assign({ guid: this.guid }, this.hostSportForm.value);
@@ -58,8 +65,6 @@ export class HostSportComponent {
 
 			this.http.post('/api/v1/sport_game', data).subscribe(
 				(data: any) => {
-					// let path = 'main/sport-game/' + data.sportGame.gid;
-
 					//console.log('SERVER POST RESPONSE');
 					//console.log(data);
 
@@ -79,4 +84,19 @@ export class HostSportComponent {
 			this.submitted = true;
 		}
 	}
+
+	hostSportTime: NgxMaterialTimepickerTheme = {
+		// container: {
+		// 	bodyBackgroundColor: '#424242',
+		// 	buttonColor: '#fff'
+		// },
+		dial: {
+			dialBackgroundColor: '#1976d2'
+		},
+		clockFace: {
+			// clockFaceBackgroundColor: '#555',
+			clockHandColor: '#63a4ff'
+			// clockFaceTimeInactiveColor: '#fff'
+		}
+	};
 }

@@ -22,8 +22,7 @@ import { trigger, state, style, animate, transition, query, animateChild, group 
 			transition(':leave', [ animate('600ms 100ms ease-in-out', style({ transform: 'translateX(100%)' })) ])
 		]),
 		trigger('routeAnimations', [
-			// cannot use * <=> * or * <=> JoinSport because of side-nav issue
-			// transition('* <=> SportGameID, * <=> YourSports, * <=> HostSport, * <=> Profile', [
+			// More improvement can be done here fully understanding query/group
 			transition('* => *', [
 				style({ position: 'relative' }),
 				query(

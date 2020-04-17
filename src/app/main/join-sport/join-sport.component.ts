@@ -20,11 +20,19 @@ export class JoinSportComponent {
 					{ title: 'Sport 1', cols: 2, rows: 1 },
 					{ title: 'Sport 2', cols: 2, rows: 1 },
 					{ title: 'Sport 3', cols: 2, rows: 1 },
+					{ title: 'Sport 4', cols: 2, rows: 1 },
+					{ title: 'Sport 1', cols: 2, rows: 1 },
+					{ title: 'Sport 2', cols: 2, rows: 1 },
+					{ title: 'Sport 3', cols: 2, rows: 1 },
 					{ title: 'Sport 4', cols: 2, rows: 1 }
 				];
 			}
 
 			return [
+				{ title: 'Sport 1', cols: 1, rows: 1 },
+				{ title: 'Sport 2', cols: 1, rows: 1 },
+				{ title: 'Sport 3', cols: 1, rows: 1 },
+				{ title: 'Sport 4', cols: 1, rows: 1 },
 				{ title: 'Sport 1', cols: 1, rows: 1 },
 				{ title: 'Sport 2', cols: 1, rows: 1 },
 				{ title: 'Sport 3', cols: 1, rows: 1 },
