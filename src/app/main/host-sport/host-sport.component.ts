@@ -20,7 +20,9 @@ export class HostSportComponent {
 		groupDesc: [ null, Validators.required ],
 		location: [ null, Validators.required ],
 		startDateTime: [ null, Validators.required ],
-		time: [ null, Validators.required ],
+		startTime: [ null, Validators.required ],
+		endDateTime: [ null ],
+		endTime: [ null ],
 		groupType: [ 'public', Validators.required ],
 		groupJoinType: [ 'anyone', Validators.required ],
 		sportType: [ null, Validators.required ]
@@ -50,12 +52,15 @@ export class HostSportComponent {
 		this.submit = true;
 		console.log(this.hostSportForm);
 
-		// console.log(this.hostSportForm.value.startDateTime.toISOString());
-		// var tempDateTime = this.hostSportForm.value.startDateTime.toISOString();
-		// tempDateTime.substring(1, 10);
-		// this.hostSportForm.value.startDateTime = tempDateTime;
+		this.hostSportForm.value.startDateTime = this.populateTime(
+			this.hostSportForm.value.startDateTime,
+			this.hostSportForm.value.startTime
+		);
 
-		// console.log(this.hostSportForm.value.startDateTime);
+		this.hostSportForm.value.endDateTime = this.populateTime(
+			this.hostSportForm.value.endDateTime,
+			this.hostSportForm.value.endTime
+		);
 
 		if (this.hostSportForm.invalid) {
 			return;
@@ -99,4 +104,22 @@ export class HostSportComponent {
 			// clockFaceTimeInactiveColor: '#fff'
 		}
 	};
+
+	private populateTime(date: Date, time: String) {
+		let startSplittedHour = time.split(':', 2);
+		let startSplittedMinAmPm = startSplittedHour[1].split(' ', 2);
+		let startHour =
+			startSplittedMinAmPm[1] == 'PM' && startSplittedHour[0] != '12'
+				? +startSplittedHour[0] + 12
+				: +startSplittedHour[0];
+		startHour = startSplittedMinAmPm[1] == 'AM' && startSplittedHour[0] == '12' ? 0 : startHour;
+		let startMin = +startSplittedMinAmPm[0];
+
+		date.setHours(startHour);
+		date.setMinutes(startMin);
+		date.setSeconds(0);
+		date.setMilliseconds(0);
+
+		return date;
+	}
 }
