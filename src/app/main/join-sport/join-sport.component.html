@@ -4,8 +4,8 @@
       <mat-card class="join-sport-dashboard-card">
         <mat-card-header>
           <div mat-card-avatar class="join-sport-card-avatar"></div>
-          <mat-card-title>Doge</mat-card-title>
-          <mat-card-subtitle>Master of Smash</mat-card-subtitle>
+          <mat-card-title>{{card.groupName | titlecase }}</mat-card-title>
+          <mat-card-subtitle>by Doge</mat-card-subtitle>
           <mat-card-title>
             <button mat-icon-button class="join-sport-card-more-button" [matMenuTriggerFor]="menu"
               aria-label="Toggle menu">
@@ -20,11 +20,26 @@
 
         </mat-card-header>
         <mat-card-content>
-          <div class="join-sport-card-image" fxLayout="row" fxLayoutAlign="end start">
-            <button class="join-sport-card-button-icon mat-elevation-z8" mat-mini-fab color="primary"
-              aria-label="badminton">
-              <mat-icon class="join-sport-card-icon" color="primary" svgIcon="badminton">B</mat-icon>
-            </button>
+          <div class="join-sport-card-image" fxLayout="column">
+            <div fxFlex="20" fxLayout="column" fxLayoutAlign="start end">
+              <button class="join-sport-card-button-icon mat-elevation-z8" mat-mini-fab color="primary"
+                aria-label="badminton">
+                <mat-icon class="join-sport-card-icon" color="primary" svgIcon="badminton">B</mat-icon>
+              </button>
+            </div>
+            <div fxFlex="40"></div>
+            <div fxFlex="40" fxLayout="column " fxLayoutAlign="space-around start">
+              <mat-chip-list aria-label=" Sport game info">
+                <mat-chip class="mat-elevation-z2" color="primary" selected>
+                  {{card.location | uppercase}}
+                </mat-chip>
+              </mat-chip-list>
+              <mat-chip-list aria-label="Sport game info">
+                <mat-chip class="mat-elevation-z2" color="primary" selected>
+                  {{card.startDateTime | date:'dd MMM yyyy hh:mm aa':'+0800'}}
+                </mat-chip>
+              </mat-chip-list>
+            </div>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between center">
             <div>
@@ -35,8 +50,10 @@
                 <mat-icon>share</mat-icon>
               </button>
             </div>
+            <!-- <button mat-raised-button color="primary" class="join-sport-card-button"
+              routerLink="../sport-game/">Join</button> -->
             <button mat-raised-button color="primary" class="join-sport-card-button"
-              routerLink="../sport-game/gid0">Join</button>
+              [routerLink]="['../sport-game', card.gid]">Join</button>
           </div>
         </mat-card-content>
       </mat-card>

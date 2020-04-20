@@ -57,14 +57,17 @@ export class HostSportComponent {
 			this.hostSportForm.value.startTime
 		);
 
-		this.hostSportForm.value.startTime = '';
+		if (this.hostSportForm.value.endDateTime != null && this.hostSportForm.value.endTime != null) {
+			this.hostSportForm.value.endDateTime = this.populateTime(
+				this.hostSportForm.value.endDateTime,
+				this.hostSportForm.value.endTime
+			);
+		}
 
-		this.hostSportForm.value.endDateTime = this.populateTime(
-			this.hostSportForm.value.endDateTime,
-			this.hostSportForm.value.endTime
-		);
-
-		this.hostSportForm.value.endTime = '';
+		this.hostSportForm.patchValue({
+			startTime: '',
+			endTime: ''
+		});
 
 		if (this.hostSportForm.invalid) {
 			return;

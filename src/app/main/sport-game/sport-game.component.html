@@ -6,7 +6,7 @@
       <mat-card-title>
         <div fxLayout="row" fxLayoutAlign="start center">
           <div class="sport-card-title">{{ sportGame.groupName }}</div>
-          <mat-chip class="sport-card-chip" color="primary">{{ sportGame.sportType }}</mat-chip>
+          <mat-chip class="sport-card-chip" color="primary" selected>{{ sportGame.sportType | titlecase }}</mat-chip>
         </div>
 
       </mat-card-title>
@@ -19,9 +19,9 @@
 
     <mat-card-content class="sport-card-content">
       <mat-chip-list>
-        <mat-chip color="primary">{{ sportGame.groupJoinType }}</mat-chip>
-        <mat-chip color="primary">{{ sportGame.groupType }}</mat-chip>
-        <mat-chip color="primary">{{ sportGame.location }}</mat-chip>
+        <mat-chip color="primary">{{ sportGame.groupJoinType | titlecase }}</mat-chip>
+        <mat-chip color="primary">{{ sportGame.groupType | titlecase }}</mat-chip>
+        <mat-chip color="primary" selected>{{ sportGame.location | uppercase }}</mat-chip>
       </mat-chip-list>
     </mat-card-content>
 
