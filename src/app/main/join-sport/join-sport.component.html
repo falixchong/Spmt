@@ -1,11 +1,11 @@
 <div class="join-sport-container">
-  <mat-grid-list cols="2" rowHeight="360px">
+  <mat-grid-list cols="2" rowHeight="410px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="join-sport-dashboard-card">
         <mat-card-header>
           <div mat-card-avatar class="join-sport-card-avatar"></div>
           <mat-card-title>{{card.groupName | titlecase }}</mat-card-title>
-          <mat-card-subtitle>by Doge</mat-card-subtitle>
+          <mat-card-subtitle>by Doge</mat-card-subtitle> <!-- TODO: to be replaced with creator based on profile -->
           <mat-card-title>
             <button mat-icon-button class="join-sport-card-more-button" [matMenuTriggerFor]="menu"
               aria-label="Toggle menu">
@@ -13,7 +13,6 @@
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
               <button mat-menu-item>Share</button>
-              <button mat-menu-item>Unjoin</button>
               <button mat-menu-item>Unlike</button>
             </mat-menu>
           </mat-card-title>
@@ -21,27 +20,30 @@
         </mat-card-header>
         <mat-card-content>
           <div class="join-sport-card-image" fxLayout="column">
-            <div fxFlex="20" fxLayout="column" fxLayoutAlign="start end">
-              <button class="join-sport-card-button-icon mat-elevation-z8" mat-mini-fab color="primary"
+            <div fxFlex="20" fxLayout="row" fxLayoutAlign="end start">
+              <mat-chip-list class="join-sport-chip" aria-label="Sport game info">
+                <mat-chip class="mat-elevation-z4" color="primary" selected>
+                  {{card.groupType | titlecase}}
+                </mat-chip>
+                <mat-chip class="mat-elevation-z4" color="primary" selected>
+                  {{card.groupJoinType | titlecase}}
+                </mat-chip>
+              </mat-chip-list>
+              <button class="join-sport-card-button-icon mat-elevation-z4" mat-mini-fab color="primary"
                 aria-label="badminton">
-                <mat-icon class="join-sport-card-icon" color="primary" svgIcon="badminton">B</mat-icon>
+                <mat-icon class="join-sport-card-icon" color="primary" svgIcon="badminton">BN</mat-icon>
               </button>
             </div>
-            <div fxFlex="40"></div>
-            <div fxFlex="40" fxLayout="column " fxLayoutAlign="space-around start">
-              <mat-chip-list aria-label=" Sport game info">
-                <mat-chip class="mat-elevation-z2" color="primary" selected>
-                  {{card.location | uppercase}}
-                </mat-chip>
-              </mat-chip-list>
-              <mat-chip-list aria-label="Sport game info">
-                <mat-chip class="mat-elevation-z2" color="primary" selected>
-                  {{card.startDateTime | date:'dd MMM yyyy hh:mm aa':'+0800'}}
-                </mat-chip>
-              </mat-chip-list>
-            </div>
+            <div fxFlex="80"></div>
           </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div fxLayout="column" fxLayoutAlign="space-between start">
+            <div>{{card.location | titlecase}}</div>
+            <div>{{card.startDateTime | date:'EEE d MMM, h:mm aa':'+0800'}} -
+              {{card.endDateTime |date:'h:mm aa':'+0800'}}</div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions class="sport-card-action">
+          <div fxLayout="row" fxLayoutAlign="space-between end">
             <div>
               <button mat-icon-button aria-label="favorite">
                 <mat-icon>favorite</mat-icon>
@@ -50,12 +52,10 @@
                 <mat-icon>share</mat-icon>
               </button>
             </div>
-            <!-- <button mat-raised-button color="primary" class="join-sport-card-button"
-              routerLink="../sport-game/">Join</button> -->
             <button mat-raised-button color="primary" class="join-sport-card-button"
               [routerLink]="['../sport-game', card.gid]">Join</button>
           </div>
-        </mat-card-content>
+        </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>

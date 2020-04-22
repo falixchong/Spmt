@@ -1,34 +1,60 @@
 <div class="sport-card-container">
   <mat-card class="sport-card">
-    <div class="sport-card-img"></div>
-    <!-- <div mat-card-image class="sport-card-img"></div> -->
-    <mat-card-header class="sport-card-header">
+    <mat-card-header>
+      <div mat-card-avatar class="sport-card-avatar"></div>
+      <mat-card-title>{{sportGame.groupName | titlecase }}</mat-card-title>
+      <mat-card-subtitle>by Doge</mat-card-subtitle> <!-- TODO: to be replaced with creator based on profile -->
       <mat-card-title>
-        <div fxLayout="row" fxLayoutAlign="start center">
-          <div class="sport-card-title">{{ sportGame.groupName }}</div>
-          <mat-chip class="sport-card-chip" color="primary" selected>{{ sportGame.sportType | titlecase }}</mat-chip>
-        </div>
-
+        <button mat-icon-button class="sport-card-more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" xPosition="before">
+          <button mat-menu-item>Share</button>
+          <button mat-menu-item>Unlike</button>
+        </mat-menu>
       </mat-card-title>
-
-      <!-- <mat-card-subtitle>{{ sportGame.sportType }}</mat-card-subtitle> -->
-      <mat-card-subtitle>
-        {{ sportGame.groupDesc }}
-      </mat-card-subtitle>
     </mat-card-header>
-
-    <mat-card-content class="sport-card-content">
-      <mat-chip-list>
-        <mat-chip color="primary">{{ sportGame.groupJoinType | titlecase }}</mat-chip>
-        <mat-chip color="primary">{{ sportGame.groupType | titlecase }}</mat-chip>
-        <mat-chip color="primary" selected>{{ sportGame.location | uppercase }}</mat-chip>
-      </mat-chip-list>
+    <mat-card-content>
+      <div class="sport-card-image" fxLayout="column">
+        <div fxFlex="20" fxLayout="row" fxLayoutAlign="end start ">
+          <mat-chip-list class="sport-card-chip" aria-label="Sport game info">
+            <mat-chip class="mat-elevation-z4" color="primary" selected>
+              {{sportGame.groupType | titlecase}}
+            </mat-chip>
+            <mat-chip class="mat-elevation-z4" color="primary" selected>
+              {{sportGame.groupJoinType | titlecase}}
+            </mat-chip>
+          </mat-chip-list>
+          <button class="sport-card-button-icon mat-elevation-z4" mat-mini-fab color="primary" aria-label="badminton">
+            <mat-icon class="sport-card-icon" color="primary" svgIcon="badminton">B</mat-icon>
+          </button>
+        </div>
+        <div fxFlex="80"></div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="space-around start">
+        <div>{{sportGame.location | titlecase}}</div>
+        <div>{{sportGame.startDateTime | date:'EEE d MMM, h:mm aa':'+0800'}} -
+          {{sportGame.endDateTime |date:'h:mm aa':'+0800'}}</div>
+      </div>
+      <div class="sport-card-desc">
+        {{sportGame.groupDesc}}
+      </div>
     </mat-card-content>
-
     <mat-card-actions class="sport-card-action">
-      <div fxLayout="row" fxLayoutAlign="end stretch">
-        <button mat-raised-button class="sport-card-button" color="primary" routerLink="../../join-sport">Back</button>
-        <button mat-raised-button class="sport-card-button" color="primary">Join</button>
+      <div fxLayout="row" fxLayoutAlign="space-between start">
+        <div>
+          <button mat-icon-button aria-label="favorite">
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button mat-icon-button aria-label="share">
+            <mat-icon>share</mat-icon>
+          </button>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between end">
+          <button mat-raised-button class=" sport-card-button" color="primary" routerLink="../../join-sport">
+            Back</button>
+          <button mat-raised-button class="sport-card-button" color="primary">Join</button>
+        </div>
       </div>
     </mat-card-actions>
   </mat-card>

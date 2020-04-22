@@ -14,27 +14,26 @@ export class SportGameComponent implements OnInit {
 	private subscriber: any;
 
 	sportGame: SportGameModel = new SportGameModel({
+		createTimeStamp: null,
+		updateTimeStamp: null,
 		guid: 'guid',
 		gid: 'gid',
 		groupName: 'groupName',
 		groupDesc: 'groupDesc',
+		location: 'location',
+		startDateTime: null,
+		endDateTime: null,
 		groupType: 'groupType',
 		groupJoinType: 'groupJoinType',
 		sportType: 'sportType'
 	});
-
 	ngOnInit(): void {
 		this.subscriber = this.route.params.subscribe((params) => {
 			this.http.get('/api/v1/sport_game/' + params.id).subscribe((data: any) => {
-				this.sportGame = new SportGameModel(data);
-				// console.log('DATA');
-				// console.log(this.sportGame);
+				this.sportGame = data;
+				console.log('DATA');
+				console.log(this.sportGame);
 			});
-
-			//console.log('GET RESPONSE');
-			//console.log(this.sportGame);
-			//console.log('PARAMS');
-			//console.log(params.id);
 		});
 	}
 }

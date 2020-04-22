@@ -4,6 +4,10 @@
 	.host-sport-card {
 		margin: 15px;
 
+		label {
+			color: rgba(0, 0, 0, .54);
+		}
+
 		.host-sport-row {
 			display: flex;
 			flex-direction: row;
@@ -21,6 +25,22 @@
 					width: 100%;
 				}
 
+				.host-sport-image {
+					background-color: $primaryBackgroundShadowColor;
+					margin-bottom: 10px;
+					ul,
+					li {
+						margin: 0;
+						padding: 0;
+						list-style: none;
+					}
+					mat-card-content,
+					mat-card-action,
+					button {
+						width: 100%;
+					}
+				}
+
 				.host-sport-datetime {
 					// width: 100%;
 					width: 100%;
@@ -33,9 +53,8 @@
 			}
 		}
 
-		.host-sport-row-spacing {
-			margin-top: 10px;
-			margin-bottom: 10px;
+		.host-sport-button {
+			width: 100%;
 		}
 	}
 }

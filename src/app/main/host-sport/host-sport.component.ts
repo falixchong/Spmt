@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { NgxMaterialTimepickerTheme } from 'ngx-material-timepicker';
+import { HttpEventType, HttpErrorResponse } from '@angular/common/http';
+import { of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 @Component({
 	selector: 'app-host-sport',
@@ -10,10 +13,14 @@ import { NgxMaterialTimepickerTheme } from 'ngx-material-timepicker';
 	styleUrls: [ './host-sport.component.scss' ]
 })
 export class HostSportComponent {
+	@ViewChild('fileUpload', { static: false })
+	fileUpload: ElementRef;
+
 	guid: string;
 	submit = false;
 	submitted = false;
 	serviceErrors: any = {};
+	message: any;
 
 	hostSportForm = this.fb.group({
 		groupName: [ null, Validators.required ],
@@ -101,6 +108,62 @@ export class HostSportComponent {
 			// clockFaceTimeInactiveColor: '#fff'
 		}
 	};
+
+	files = [];
+	onClickUpload() {
+		const fileUpload = this.fileUpload.nativeElement;
+		fileUpload.onchange = () => {
+			//Modify below code to only allow single image upload
+			// 		for (let index = 0; index < fileUpload.files.length; index++) {
+			// 			const file = fileUpload.files[index];
+			// 			this.files.push({ data: file, inProgress: false, progress: 0 });
+			// 		}
+			var file = fileUpload.files[0];
+			this.files[0] = { data: file, inProgress: false, progress: 0 };
+			this.uploadFiles();
+		};
+		fileUpload.click();
+	}
+
+	private uploadFiles() {
+		this.fileUpload.nativeElement.value = '';
+		this.files.forEach((file) => {
+			this.uploadFile(file);
+		});
+	}
+
+	uploadFile(file: any) {
+		const formData = new FormData();
+		formData.append('sportGameImage', file.data);
+		file.inProgress = true;
+		let upload = this.http.post<any>('/api/v1/sport_game/image', formData, {
+			reportProgress: true,
+			observe: 'events'
+		});
+
+		upload
+			.pipe(
+				map((event) => {
+					switch (event.type) {
+						case HttpEventType.UploadProgress:
+							file.progress = Math.round(event.loaded * 100 / event.total);
+							break;
+						case HttpEventType.Response:
+							return event;
+					}
+				}),
+				catchError((error: HttpErrorResponse) => {
+					file.inProgress = false;
+					return of(`${file.data.name} upload failed.`);
+				})
+			)
+			.subscribe((event: any) => {
+				if (typeof event === 'object') {
+					console.log(event.body);
+					this.message = event.body.message;
+				}
+			});
+	}
 
 	private populateTime(date: Date, time: String) {
 		let startSplittedHour = time.split(':', 2);
