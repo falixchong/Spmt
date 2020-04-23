@@ -71,11 +71,6 @@ export class HostSportComponent {
 			);
 		}
 
-		this.hostSportForm.patchValue({
-			startTime: '',
-			endTime: ''
-		});
-
 		if (this.hostSportForm.invalid) {
 			return;
 		} else {
@@ -163,6 +158,19 @@ export class HostSportComponent {
 					this.message = event.body.message;
 				}
 			});
+	}
+
+	clearStartDate() {
+		this.hostSportForm.get('startDateTime').setValue('');
+	}
+	clearEndDate() {
+		this.hostSportForm.get('endDateTime').setValue('');
+	}
+	clearStartTime() {
+		this.hostSportForm.get('startTime').setValue('');
+	}
+	clearEndTime() {
+		this.hostSportForm.get('endTime').setValue('');
 	}
 
 	private populateTime(date: Date, time: String) {

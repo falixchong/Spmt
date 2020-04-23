@@ -67,6 +67,10 @@
             <mat-form-field class="host-sport-datetime">
               <input matInput [matDatepicker]="startdatepicker" placeholder="Start date"
                 (click)="startdatepicker.open()" readonly formControlName="startDateTime">
+              <button mat-button mat-icon-button matSuffix (click)="clearStartDate()"
+                *ngIf="hostSportForm.value.startDateTime">
+                <mat-icon>close</mat-icon>
+              </button>
               <mat-datepicker-toggle matSuffix [for]="startdatepicker">
                 <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24" width="16"
                   matDatepickerToggleIcon>
@@ -75,6 +79,7 @@
                   <path d="M0 0h24v24H0z" fill="none" />
                 </svg>
               </mat-datepicker-toggle>
+
               <mat-datepicker touchUi #startdatepicker></mat-datepicker>
               <mat-error *ngIf="hostSportForm.controls['startDateTime'].hasError('required')">
                 Date is <strong>required</strong>
@@ -85,6 +90,10 @@
             <mat-form-field class="host-sport-datetime">
               <input matInput [ngxTimepicker]="starttimepicker" placeholder="Start time" readonly
                 formControlName="startTime">
+              <button mat-button mat-icon-button matSuffix (click)="clearStartTime()"
+                *ngIf="hostSportForm.value.startTime">
+                <mat-icon>close</mat-icon>
+              </button>
               <mat-icon matSuffix>
                 <ngx-material-timepicker-toggle [for]="starttimepicker">
                   <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="3 -3 24 24" width="18"
@@ -108,6 +117,10 @@
             <mat-form-field class="host-sport-datetime">
               <input matInput [matDatepicker]="enddatepicker" placeholder="End date" (click)="enddatepicker.open()"
                 readonly formControlName="endDateTime">
+              <button mat-button mat-icon-button matSuffix (click)="clearEndDate()"
+                *ngIf="hostSportForm.value.endDateTime">
+                <mat-icon>close</mat-icon>
+              </button>
               <mat-datepicker-toggle matSuffix [for]="enddatepicker">
                 <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24" width="16"
                   matDatepickerToggleIcon>
@@ -125,6 +138,9 @@
           <div class="host-sport-col">
             <mat-form-field class="host-sport-datetime">
               <input matInput [ngxTimepicker]="endtimepicker" placeholder="End time" readonly formControlName="endTime">
+              <button mat-button mat-icon-button matSuffix (click)="clearEndTime()" *ngIf="hostSportForm.value.endTime">
+                <mat-icon>close</mat-icon>
+              </button>
               <mat-icon matSuffix>
                 <ngx-material-timepicker-toggle [for]="endtimepicker">
                   <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="3 -3 24 24" width="18"
