@@ -17,15 +17,17 @@
         </div>
         <div class="host-sport-row">
           <div class="host-sport-col">
-            <label>Group Image</label>
-            <button class="host-sport-close-button" type="button" mat-button mat-icon-button matSuffix
-              (click)="clearImage()" *ngIf="uploadStatus && !removeImage">
-              <mat-icon>close</mat-icon>
-            </button>
+            <div fxLayout="row" fxLayoutAlign="space-between start">
+              <label>Group Image</label>
+              <button class="host-sport-close-button" type="button" mat-button mat-icon-button matSuffix
+                (click)="clearImage()" *ngIf="uploadStatus && !removeImage">
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
             <div class="host-sport-image">
               <ul>
                 <li *ngFor="let file of files">
-                  <mat-progress-bar [value]="file.progress" *ngIf="!removeImage"></mat-progress-bar>
+                  <mat-progress-bar [value]="file.progress" *ngIf="file.inProgress"></mat-progress-bar>
                   <div *ngIf="!uploadStatus">
                     {{uploadMessage}}
                   </div>

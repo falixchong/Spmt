@@ -210,6 +210,7 @@ export class HostSportComponent implements OnInit {
 					this.uploadStatus = event.status = '201' ? true : false;
 					this.uploadMessage = event.body.message;
 					this.removeImage = false;
+					file.inProgress = false;
 					console.log(this.uploadStatus);
 				}
 			});
