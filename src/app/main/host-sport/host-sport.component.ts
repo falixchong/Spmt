@@ -153,6 +153,7 @@ export class HostSportComponent implements OnInit {
 	files = [];
 	uploadMessage: any;
 	uploadStatus: boolean = false;
+	removeImage: boolean = false;
 
 	onClickUpload() {
 		const fileUpload = this.fileUpload.nativeElement;
@@ -208,6 +209,7 @@ export class HostSportComponent implements OnInit {
 					console.log(event);
 					this.uploadStatus = event.status = '201' ? true : false;
 					this.uploadMessage = event.body.message;
+					this.removeImage = false;
 					console.log(this.uploadStatus);
 				}
 			});
@@ -224,6 +226,9 @@ export class HostSportComponent implements OnInit {
 	}
 	clearEndTime() {
 		this.hostSportForm.get('endTime').setValue('');
+	}
+	clearImage() {
+		this.removeImage = true;
 	}
 
 	private populateTime(date: Date, time: String) {

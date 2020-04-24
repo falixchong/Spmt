@@ -18,26 +18,26 @@
         <div class="host-sport-row">
           <div class="host-sport-col">
             <label>Group Image</label>
-            <mat-card class="host-sport-image">
-              <mat-card-content>
-                <ul>
-                  <li *ngFor="let file of files">
-                    <mat-progress-bar [value]="file.progress"></mat-progress-bar>
-                    <div *ngIf="!uploadStatus">
-                      {{uploadMessage}}
-                    </div>
-                    <div class="host-sport-uploaded-image" *ngIf="uploadStatus">
-                    </div>
-                  </li>
-                </ul>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-button type="button" color="primary" (click)="onClickUpload()">
-                  <mat-icon>file_upload</mat-icon>
-                  Group Image
-                </button>
-              </mat-card-actions>
-            </mat-card><input type="file" #fileUpload id="fileUpload" name="fileUpload"
+            <button class="host-sport-close-button" type="button" mat-button mat-icon-button matSuffix
+              (click)="clearImage()" *ngIf="uploadStatus && !removeImage">
+              <mat-icon>close</mat-icon>
+            </button>
+            <div class="host-sport-image">
+              <ul>
+                <li *ngFor="let file of files">
+                  <mat-progress-bar [value]="file.progress" *ngIf="!removeImage"></mat-progress-bar>
+                  <div *ngIf="!uploadStatus">
+                    {{uploadMessage}}
+                  </div>
+                  <div class="host-sport-uploaded-image" *ngIf="uploadStatus && !removeImage">
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <button mat-button class="host-sport-input" type="button" color="primary" (click)="onClickUpload()">
+              <mat-icon>file_upload</mat-icon>
+              Group Image
+            </button><input type="file" #fileUpload id="fileUpload" name="fileUpload"
               accept="image/x-png,image/jpg,image/jpeg" style="display:none;" />
           </div>
         </div>

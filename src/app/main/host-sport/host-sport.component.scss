@@ -17,6 +17,19 @@
 				width: 0%;
 				margin-right: 10px;
 
+				.mat-icon-button {
+					width: 18px;
+					height: 18px;
+					line-height: 18px;
+
+					.mat-icon {
+						font-size: 18px;
+						width: 18px;
+						height: 18px;
+						line-height: 18px;
+					}
+				}
+
 				&:last-child {
 					margin-right: 0;
 				}
@@ -25,9 +38,17 @@
 					width: 100%;
 				}
 
+				// .host-sport-close-button {
+				// 	// transform: scale(0.65);
+				// }
+
 				.host-sport-image {
 					background-color: $primaryBackgroundShadowColor;
 					margin-bottom: 10px;
+					height: 200px;
+					border-radius: 5px;
+					border-color: rgba(0, 0, 0, .04);
+					border-style: solid;
 					ul,
 					li {
 						margin: 0;
@@ -40,6 +61,7 @@
 						height: 200px;
 						width: 100%;
 						margin-bottom: 5px;
+						margin-top: 5px;
 					}
 					mat-card-content,
 					mat-card-action,
