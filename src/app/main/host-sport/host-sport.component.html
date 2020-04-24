@@ -23,9 +23,11 @@
                 <ul>
                   <li *ngFor="let file of files">
                     <mat-progress-bar [value]="file.progress"></mat-progress-bar>
-                    <span id="file-label">
-                      <!-- {{message}} Dispay message or uploaded image here-->
-                    </span>
+                    <div *ngIf="!uploadStatus">
+                      {{uploadMessage}}
+                    </div>
+                    <div class="host-sport-uploaded-image" *ngIf="uploadStatus">
+                    </div>
                   </li>
                 </ul>
               </mat-card-content>
@@ -35,11 +37,8 @@
                   Group Image
                 </button>
               </mat-card-actions>
-            </mat-card><input type="file" #fileUpload id="fileUpload" name="fileUpload" accept="image/*"
-              style="display:none;" />
-            <!-- </mat-card><input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple"
-            accept="image/*" style="display:none;" /> -->
-            <!--TODO: change accept to .png, .jpg and .jpeg -->
+            </mat-card><input type="file" #fileUpload id="fileUpload" name="fileUpload"
+              accept="image/x-png,image/jpg,image/jpeg" style="display:none;" />
           </div>
         </div>
         <div class="host-sport-row">
@@ -66,7 +65,7 @@
           <div class="host-sport-col">
             <mat-form-field class="host-sport-datetime">
               <input matInput [matDatepicker]="startdatepicker" placeholder="Start date"
-                (click)="startdatepicker.open()" readonly formControlName="startDateTime">
+                (click)="startdatepicker.open()" [min]="curDate" readonly formControlName="startDateTime">
               <button mat-button mat-icon-button matSuffix (click)="clearStartDate()"
                 *ngIf="hostSportForm.value.startDateTime">
                 <mat-icon>close</mat-icon>
@@ -116,7 +115,9 @@
           <div class="host-sport-col">
             <mat-form-field class="host-sport-datetime">
               <input matInput [matDatepicker]="enddatepicker" placeholder="End date" (click)="enddatepicker.open()"
-                readonly formControlName="endDateTime">
+                [min]="curDate" readonly formControlName="endDateTime">
+              <!-- <input matInput [matDatepicker]="enddatepicker" placeholder="End date" (click)="enddatepicker.open()"
+                [min]="curDate" [disabled]="endDateTimeDisabled" readonly formControlName="endDateTime"> -->
               <button mat-button mat-icon-button matSuffix (click)="clearEndDate()"
                 *ngIf="hostSportForm.value.endDateTime">
                 <mat-icon>close</mat-icon>
@@ -138,6 +139,8 @@
           <div class="host-sport-col">
             <mat-form-field class="host-sport-datetime">
               <input matInput [ngxTimepicker]="endtimepicker" placeholder="End time" readonly formControlName="endTime">
+              <!-- <input matInput [ngxTimepicker]="endtimepicker" placeholder="End time" [disabled]="endDateTimeDisabled"
+                readonly formControlName="endTime"> -->
               <button mat-button mat-icon-button matSuffix (click)="clearEndTime()" *ngIf="hostSportForm.value.endTime">
                 <mat-icon>close</mat-icon>
               </button>
@@ -155,6 +158,9 @@
               </ngx-material-timepicker>
               <mat-error *ngIf="hostSportForm.controls['endTime'].hasError('required')">
                 Time is <strong>required</strong>
+              </mat-error>
+              <mat-error *ngIf="hostSportForm.controls['endTime'].hasError('invalidEndTime')">
+                <strong>End time</strong> must be later than <strong>start time</strong>
               </mat-error>
             </mat-form-field>
           </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, ValidatorFn, FormGroup, ValidationErrors } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { NgxMaterialTimepickerTheme } from 'ngx-material-timepicker';
@@ -12,30 +12,16 @@ import { catchError, map } from 'rxjs/operators';
 	templateUrl: './host-sport.component.html',
 	styleUrls: [ './host-sport.component.scss' ]
 })
-export class HostSportComponent {
+export class HostSportComponent implements OnInit {
 	@ViewChild('fileUpload', { static: false })
 	fileUpload: ElementRef;
 
 	guid: string;
+	curDate: Date = new Date();
 	submit = false;
 	submitted = false;
 	serviceErrors: any = {};
-	message: any;
-
-	hostSportForm = this.fb.group({
-		groupName: [ null, Validators.required ],
-		groupDesc: [ null, Validators.required ],
-		location: [ null, Validators.required ],
-		startDateTime: [ null, Validators.required ],
-		startTime: [ null, Validators.required ],
-		endDateTime: [ null ],
-		endTime: [ null ],
-		groupType: [ 'public', Validators.required ],
-		groupJoinType: [ 'anyone', Validators.required ],
-		sportType: [ null, Validators.required ]
-	});
-
-	hasUnitNumber = false;
+	hostSportForm: FormGroup;
 
 	sportTypes = [
 		{ name: 'Badminton', value: 'badminton' },
@@ -44,6 +30,20 @@ export class HostSportComponent {
 	];
 
 	constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
+		this.hostSportForm = this.fb.group({
+			groupName: [ null, Validators.required ],
+			groupDesc: [ null, Validators.required ],
+			location: [ null, Validators.required ],
+			startDateTime: [ null, Validators.required ],
+			startTime: [ null, Validators.required ],
+			endDateTime: [ null ],
+			endTime: [ null ],
+			groupType: [ 'public', Validators.required ],
+			groupJoinType: [ 'anyone', Validators.required ],
+			sportType: [ null, Validators.required ]
+		});
+		this.hostSportForm.setValidators(this.checkEndTime());
+
 		this.http.get('/api/v1/generate_uid').subscribe(
 			(data: any) => {
 				this.guid = data.guid;
@@ -54,6 +54,52 @@ export class HostSportComponent {
 			}
 		);
 	}
+
+	private checkEndTime(): ValidatorFn {
+		return (group: FormGroup): ValidationErrors => {
+			const startDateControl = group.controls['startDateTime'];
+			const startTimeControl = group.controls['startTime'];
+			const endDateControl = group.controls['endDateTime'];
+			const endTimeControl = group.controls['endTime'];
+			if (startDateControl.value == endDateControl.value) {
+				if (endTimeControl.value >= startTimeControl.value) {
+					endTimeControl.setErrors({ invalidEndTime: true });
+				} else {
+					endTimeControl.setErrors(null);
+				}
+			}
+
+			if (
+				(endDateControl.value == '' || endDateControl.value == null) &&
+				(endTimeControl.value !== '' || endTimeControl.value !== null)
+			) {
+				endDateControl.setErrors({ required: true });
+			} else {
+				endDateControl.setErrors(null);
+			}
+
+			if (
+				(endTimeControl.value == '' || endTimeControl.value == null) &&
+				(endDateControl.value !== '' || endDateControl.value !== null)
+			) {
+				endTimeControl.setErrors({ required: true });
+			} else {
+				endTimeControl.setErrors(null);
+			}
+
+			if (
+				(endTimeControl.value == '' || endTimeControl.value == null) &&
+				(endDateControl.value == '' || endDateControl.value == null)
+			) {
+				endTimeControl.setErrors(null);
+				endDateControl.setErrors(null);
+			}
+
+			return;
+		};
+	}
+
+	ngOnInit() {}
 
 	onSubmit() {
 		this.submit = true;
@@ -105,6 +151,9 @@ export class HostSportComponent {
 	};
 
 	files = [];
+	uploadMessage: any;
+	uploadStatus: boolean = false;
+
 	onClickUpload() {
 		const fileUpload = this.fileUpload.nativeElement;
 		fileUpload.onchange = () => {
@@ -149,13 +198,17 @@ export class HostSportComponent {
 				}),
 				catchError((error: HttpErrorResponse) => {
 					file.inProgress = false;
-					return of(`${file.data.name} upload failed.`);
+					this.uploadStatus = false;
+					this.uploadMessage = error.error;
+					return of(this.uploadMessage);
 				})
 			)
 			.subscribe((event: any) => {
 				if (typeof event === 'object') {
-					console.log(event.body);
-					this.message = event.body.message;
+					console.log(event);
+					this.uploadStatus = event.status = '201' ? true : false;
+					this.uploadMessage = event.body.message;
+					console.log(this.uploadStatus);
 				}
 			});
 	}

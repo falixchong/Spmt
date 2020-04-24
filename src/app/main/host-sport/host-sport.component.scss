@@ -34,6 +34,13 @@
 						padding: 0;
 						list-style: none;
 					}
+					.host-sport-uploaded-image {
+						background-image: url('src/assets/images/img_badminton_cropped_flip.jpg');
+						background-size: cover;
+						height: 200px;
+						width: 100%;
+						margin-bottom: 5px;
+					}
 					mat-card-content,
 					mat-card-action,
 					button {
