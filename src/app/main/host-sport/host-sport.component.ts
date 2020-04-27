@@ -31,9 +31,9 @@ export class HostSportComponent implements OnInit {
 
 	constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
 		this.hostSportForm = this.fb.group({
-			groupName: [ null, Validators.required ],
-			groupDesc: [ null, Validators.required ],
-			location: [ null, Validators.required ],
+			groupName: [ null, [ Validators.required, Validators.maxLength(20) ] ],
+			groupDesc: [ null, [ Validators.required, Validators.maxLength(60) ] ],
+			location: [ null, [ Validators.required, Validators.maxLength(40) ] ],
 			startDateTime: [ null, Validators.required ],
 			startTime: [ null, Validators.required ],
 			endDateTime: [ null ],
@@ -233,19 +233,21 @@ export class HostSportComponent implements OnInit {
 	}
 
 	private populateTime(date: Date, time: String) {
-		let startSplittedHour = time.split(':', 2);
-		let startSplittedMinAmPm = startSplittedHour[1].split(' ', 2);
-		let startHour =
-			startSplittedMinAmPm[1] == 'PM' && startSplittedHour[0] != '12'
-				? +startSplittedHour[0] + 12
-				: +startSplittedHour[0];
-		startHour = startSplittedMinAmPm[1] == 'AM' && startSplittedHour[0] == '12' ? 0 : startHour;
-		let startMin = +startSplittedMinAmPm[0];
+		if (time !== null && time !== '') {
+			let startSplittedHour = time.split(':', 2);
+			let startSplittedMinAmPm = startSplittedHour[1].split(' ', 2);
+			let startHour =
+				startSplittedMinAmPm[1] == 'PM' && startSplittedHour[0] != '12'
+					? +startSplittedHour[0] + 12
+					: +startSplittedHour[0];
+			startHour = startSplittedMinAmPm[1] == 'AM' && startSplittedHour[0] == '12' ? 0 : startHour;
+			let startMin = +startSplittedMinAmPm[0];
 
-		date.setHours(startHour);
-		date.setMinutes(startMin);
-		date.setSeconds(0);
-		date.setMilliseconds(0);
+			date.setHours(startHour);
+			date.setMinutes(startMin);
+			date.setSeconds(0);
+			date.setMilliseconds(0);
+		}
 
 		return date;
 	}

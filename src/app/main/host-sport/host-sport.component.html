@@ -12,6 +12,9 @@
               <mat-error *ngIf="hostSportForm.controls['groupName'].hasError('required')">
                 Group Name is <strong>required</strong>
               </mat-error>
+              <mat-error *ngIf="hostSportForm.controls['groupName'].hasError('maxlength')">
+                Maximum <strong>20 characters</strong>
+              </mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -31,8 +34,8 @@
                   <div *ngIf="!uploadStatus">
                     {{uploadMessage}}
                   </div>
-                  <div class="host-sport-uploaded-image" *ngIf="uploadStatus && !removeImage">
-                  </div>
+                  <img class="host-sport-uploaded-image" src="../../../assets/images/img_badminton_cropped_flip.jpg"
+                    *ngIf="uploadStatus && !removeImage">
                 </li>
               </ul>
             </div>
@@ -50,6 +53,9 @@
               <mat-error *ngIf="hostSportForm.controls['groupDesc'].hasError('required')">
                 First name is <strong>required</strong>
               </mat-error>
+              <mat-error *ngIf="hostSportForm.controls['groupDesc'].hasError('maxlength')">
+                Maximum <strong>60 characters</strong>
+              </mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -59,6 +65,9 @@
               <input matInput placeholder="Location" formControlName="location" />
               <mat-error *ngIf="hostSportForm.controls['location'].hasError('required')">
                 Address is <strong>required</strong>
+              </mat-error>
+              <mat-error *ngIf="hostSportForm.controls['groupDesc'].hasError('maxlength')">
+                Maximum <strong>40 characters</strong>
               </mat-error>
             </mat-form-field>
           </div>
