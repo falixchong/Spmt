@@ -34,8 +34,9 @@
                   <div *ngIf="!uploadStatus">
                     {{uploadMessage}}
                   </div>
-                  <img class="host-sport-uploaded-image" src="../../../assets/images/img_badminton_cropped_flip.jpg"
-                    *ngIf="uploadStatus && !removeImage">
+                  <!-- <img class="host-sport-uploaded-image" src="../../../assets/images/img_badminton_cropped_flip.jpg"
+                    *ngIf="uploadStatus && !removeImage"> -->
+                  <img class="host-sport-uploaded-image" [src]="url" *ngIf="uploadStatus && !removeImage">
                 </li>
               </ul>
             </div>

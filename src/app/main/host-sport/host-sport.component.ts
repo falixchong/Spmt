@@ -154,6 +154,7 @@ export class HostSportComponent implements OnInit {
 	uploadMessage: any;
 	uploadStatus: boolean = false;
 	removeImage: boolean = false;
+	url: any;
 
 	onClickUpload() {
 		const fileUpload = this.fileUpload.nativeElement;
@@ -166,6 +167,13 @@ export class HostSportComponent implements OnInit {
 			var file = fileUpload.files[0];
 			this.files[0] = { data: file, inProgress: false, progress: 0 };
 			this.uploadFiles();
+
+			var reader = new FileReader();
+			reader.readAsDataURL(file); // read file as data url
+			reader.onload = (event) => {
+				// called once readAsDataURL is completed
+				this.url = event.target.result;
+			};
 		};
 		fileUpload.click();
 	}
