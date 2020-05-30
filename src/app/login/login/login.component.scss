@@ -84,6 +84,21 @@
 				}
 			}
 
+			.login-message {
+				height: 10px;
+				width: 100%;
+				margin: 0;
+				text-align: center;
+			}
+
+			.login-message-error {
+				height: 10px;
+				width: 100%;
+				margin: 0;
+				text-align: center;
+				color: $warnColor;
+			}
+
 			.login-wrapper-button {
 				.login-button {
 					margin-bottom: 8px;

@@ -1,25 +1,31 @@
 import { Injectable } from '@angular/core';
-
 import { Observable, of } from 'rxjs';
-import { tap, delay } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { HttpEventType, HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root',
+	providedIn: 'root'
 })
 export class AuthService {
-  isLoggedIn = false;
+	loginResponse = false;
+	isLoggedIn = false;
+	serviceErrors: any = {};
 
-  // store the URL so we can redirect after logging in
-  redirectUrl: string;
+	constructor(private http: HttpClient, private router: Router) {}
 
-  login(): Observable<boolean> {
-    return of(true).pipe(
-      delay(500),
-      tap(val => this.isLoggedIn = true)
-    );
-  }
+	// store the URL so we can redirect after logging in
+	redirectUrl: string;
 
-  logout(): void {
-    this.isLoggedIn = false;
-  }
+	// Call login service
+	login(username: string, password: string): Observable<boolean> {
+		let data: any = { userName: username, password: password };
+
+		return this.http.post<boolean>('/api/v1/auth', data).pipe(tap((val) => (this.isLoggedIn = val)));
+	}
+
+	logout(): void {
+		this.isLoggedIn = false;
+	}
 }
