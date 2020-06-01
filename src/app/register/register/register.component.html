@@ -1,11 +1,11 @@
 <body class="register-container">
   <div class="register-wrapper" fxLayout="row" fxLayoutAlign="center center">
-    <mat-card class="register-box">
-      <mat-card-header>
-        <mat-card-title>Register</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <form [formGroup]="registerForm" class="register-form">
+    <form [formGroup]="registerForm" class="register-form">
+      <mat-card class="register-box">
+        <mat-card-header>
+          <mat-card-title>Register</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
           <mat-form-field class="register-full-width">
             <input matInput type="text" placeholder="Username" formControlName="userName" />
             <mat-error *ngIf="registerForm.controls['userName'].hasError('required')">
@@ -18,6 +18,8 @@
             <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
               Email is <strong>required</strong>
             </mat-error>
+            <mat-error class="error-message" *ngIf="registerForm.controls['email'].hasError('pattern')">
+              Invalid Email</mat-error>
           </mat-form-field>
           <p></p>
           <mat-form-field class="register-full-width">
@@ -27,16 +29,16 @@
             </mat-error>
           </mat-form-field>
           <p></p>
-        </form>
-      </mat-card-content>
-      <p></p>
-      <div class="register-wrapper-button">
-        <button mat-stroked-button color="primary" type="submit" class="register-button"
-          (click)="register()">Register</button>
-        <button mat-stroked-button color="primary" type="button" class="register-button" routerLink="/login">
-          Back
-        </button>
-      </div>
-    </mat-card>
+        </mat-card-content>
+        <p></p>
+        <div class="register-wrapper-button">
+          <button mat-stroked-button color="primary" type="submit" class="register-button"
+            (click)="register()">Register</button>
+          <button mat-stroked-button color="primary" type="button" class="register-button" routerLink="/login">
+            Back
+          </button>
+        </div>
+      </mat-card>
+    </form>
   </div>
 </body>

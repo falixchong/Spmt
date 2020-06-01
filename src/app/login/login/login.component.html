@@ -3,14 +3,12 @@
     Court Management
   </button>
   <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-
-    <mat-card class="login-box">
-      <mat-card-header class="login-card-header">
-        <mat-card-title>Spointment</mat-card-title>
-      </mat-card-header>
-
-      <mat-card-content>
-        <form [formGroup]="loginForm" class="login-form">
+    <form [formGroup]="loginForm" class="login-form">
+      <mat-card class="login-box">
+        <mat-card-header class="login-card-header">
+          <mat-card-title>Spointment</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
           <mat-form-field class="login-full-width">
             <input matInput type="text" placeholder="Username" formControlName="userName" />
             <mat-error *ngIf="loginForm.controls['userName'].hasError('required')">
@@ -23,27 +21,22 @@
               Group Name is <strong>required</strong>
             </mat-error>
           </mat-form-field>
-        </form>
-        <div *ngIf="errorMessage; else elseBlock" class="login-message-error">{{errorMessage}}</div>
-        <ng-template #elseBlock>
-          <div class="login-message">{{message}}</div>
-        </ng-template>
-      </mat-card-content>
-
-      <div class="login-wrapper-button">
-        <button mat-stroked-button color="primary" type="button" class="login-button" (click)="login()"
-          *ngIf="!authService.isLoggedIn">
-          Log In
-        </button>
-        <!-- <button mat-stroked-button color="primary" class="login-button" (click)="logout()"
-          *ngIf="authService.isLoggedIn">
-          Log Out
-        </button> -->
-        <button mat-stroked-button color="primary" type="button" class="login-button" routerLink="/register"
-          routerLinkActive="active">
-          Register
-        </button>
-      </div>
-    </mat-card>
+          <div *ngIf="errorMessage; else elseBlock" class="login-message-error">{{errorMessage}}</div>
+          <ng-template #elseBlock>
+            <div class="login-message">{{message}}</div>
+          </ng-template>
+        </mat-card-content>
+        <div class="login-wrapper-button">
+          <button mat-stroked-button color="primary" type="button" class="login-button" (click)="login()"
+            *ngIf="!authService.isLoggedIn">
+            Log In
+          </button>
+          <button mat-stroked-button color="primary" type="button" class="login-button" routerLink="/register"
+            routerLinkActive="active">
+            Register
+          </button>
+        </div>
+      </mat-card>
+    </form>
   </div>
 </body>
